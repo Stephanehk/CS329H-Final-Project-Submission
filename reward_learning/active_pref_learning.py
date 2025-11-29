@@ -476,11 +476,11 @@ def main():
 
     if env_name == "pandemic":
         # Load weights from saved JSON file
-        policy_names_str = "pandemic_base_policy_2025-05-05_21-29-00"  # This should match the policy names used in learn_pandemic_reward_weights.py
-        weights_path = Path("reward_learning_data") / f"pandemic_weights_{policy_names_str}.json"
+        # policy_names_str = "pandemic_base_policy_2025-05-05_21-29-00"  # This should match the policy names used in learn_pandemic_reward_weights.py
+        # weights_path = Path("reward_learning_data") / f"pandemic_weights_{policy_names_str}.json"
         
-        if not weights_path.exists():
-            raise ValueError(f"Weights file not found: {weights_path}")
+        # if not weights_path.exists():
+        #     raise ValueError(f"Weights file not found: {weights_path}")
             
         # with open(weights_path, 'r') as f:
         #     weights_dict = json.load(f)

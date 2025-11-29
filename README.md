@@ -9,10 +9,18 @@ This project implements a Deliberative-Reward-Design approach for generating rew
     ```bash
     conda env create -f requirements.yaml 
     ```
+    alternatively, use the requirements.txt for pip if this fails (e.g., if on a mac not linux)
 3.  **Pandemic Environment**: Install the pandemic environment.
     ```bash
     cd pandemic
     pip install -e .
+    cd ..
+    ```
+4.  **Traffic Environment**: Install the traffic environment.
+    ```bash
+    cd flow_reward_misspecification
+    pip install -e . --no-build-isolation
+    export SUMO_HOME="$PWD"
     cd ..
     ```
 

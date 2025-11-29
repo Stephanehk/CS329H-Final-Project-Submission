@@ -4,10 +4,10 @@ from pathlib import Path
 import pickle
 from typing import List, Dict, Any, Tuple
 from scipy.stats import kendalltau
-from test_glucose_reward import create_glucose_reward
+# from test_glucose_reward import create_glucose_reward
 from test_pandemic_reward import create_pandemic_reward
 from test_traffic_reward import create_traffic_reward
-from bgp.simglucose.envs.simglucose_gym_env import SimglucoseEnv
+# from bgp.simglucose.envs.simglucose_gym_env import SimglucoseEnv
 from pandemic_simulator.environment.pandemic_env import PandemicPolicyGymEnv
 from utils.pandemic_rollout_and_save import TrajectoryStep
 from utils.glucose_config import get_config as get_glucose_config

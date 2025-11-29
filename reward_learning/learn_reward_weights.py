@@ -18,7 +18,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset
 
-from test_glucose_reward import create_glucose_reward
+# from test_glucose_reward import create_glucose_reward
 from test_pandemic_reward import create_pandemic_reward
 from test_traffic_reward import create_traffic_reward
 from test_mujoco_ant_reward import create_mujoco_ant_reward

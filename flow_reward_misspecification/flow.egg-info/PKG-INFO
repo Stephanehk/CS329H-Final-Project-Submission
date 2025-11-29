@@ -1,4 +1,4 @@
-Metadata-Version: 2.2
+Metadata-Version: 2.4
 Name: flow
 Version: 0.5.0.dev0
 Summary: A system for applying deep reinforcement learning and control to autonomous vehicles and traffic infrastructure
@@ -8,6 +8,7 @@ License-File: LICENSE.md
 Dynamic: description
 Dynamic: home-page
 Dynamic: keywords
+Dynamic: license-file
 Dynamic: summary
 
 

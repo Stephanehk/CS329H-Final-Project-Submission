@@ -1,0 +1,17 @@
+{
+    "DecreaseInTestingWhileInfectionsIncreasePenalty": 0.2095518969046194,
+    "DecreaseInTestingWithHighInfectionRatesPenalty": 0.005292802630799134,
+    "DiseaseIncidenceRateReward": -15.371179621122296,
+    "EmergencyResponseEffectivenessReward": 0.10295867237714577,
+    "InconsistencyBetweenRegulatoryStageAndInfectionRatesPenalty": 0.012512736389916394,
+    "IncreaseInCriticalCasesWithoutProportionalRecoveriesPenalty": -0.0054691456077312,
+    "InfectionTransmissionRateReward": -15.371179621133217,
+    "MorbidityRateReward": 0.4688599514877026,
+    "MortalityRateReward": -0.082534340843682,
+    "PublicHealthOutcomesReward": 110.96157744768834,
+    "RapidIncreaseInInfectionRatesWithoutRegulatoryChangePenalty": -0.2458092076621961,
+    "SimultaneousIncreaseInInfectionsAndTestingPenalty": 0.26861089631181123,
+    "r2_score": 0.10580499393869669,
+    "kendall_tau": 0.2835643564356436,
+    "kendall_tau_p_value": 2.6482328497657348e-05
+}

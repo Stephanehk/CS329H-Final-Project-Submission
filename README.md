@@ -80,3 +80,11 @@ python3 -m reward_learning.rewards_dictionary_eval --env_name pandemic --weights
 python3 -m reward_learning.rewards_dictionary_eval --env_name traffic --weights_name traffic_o4-mini_True_prefs
 ```
 
+## Execution Time & Hardware
+
+No special hardware is required; all of this can be run on CPU or GPU.
+
+*   `obj_elicit.py` takes around 15 minutes to run and costs ~$1.5 in OpenAI API fees.
+*   `reward_learning.active_pref_learning` takes around 2 hours to run and costs ~$2 in OpenAI API fees.
+*   `reward_learning.learn_reward_weights` takes ~24 hours to run.
+*   `reward_learning.rewards_dictionary_eval` takes ~12 hours to run.

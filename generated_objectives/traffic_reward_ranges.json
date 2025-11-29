@@ -1,0 +1,12 @@
+{
+    "FailureCountReward": "Range: {0, 1}',  # Discrete values",
+    "MeanEgoSpeedsReward": "Range: [0, inf)',  # Continuous unbounded",
+    "MeanHeadwaysReward": "Range: [0, inf)',  # Continuous unbounded",
+    "SpeedExceedanceReward": "Range: {0, 1, 2, ...}',  # Discrete values",
+    "MeanEgoVehicleAccelerationsReward": "Range: (-inf, inf)',  # Continuous unbounded",
+    "MeanAllVehicleSpeedsReward": "Range: [0, inf)',  # Continuous unbounded",
+    "SafetyHeadwayFailureReward": "Range: (-inf, inf)',  # Continuous unbounded",
+    "MinimumEgoSpeedsReward": "Range: [0, inf)',  # Continuous unbounded",
+    "MinimumHeadwaysReward": "Range: [0, inf)',  # Continuous unbounded",
+    "MaximumAllVehicleSpeedsReward": "Range: [0, inf)',  # Continuous unbounded"
+}

@@ -1,0 +1,16 @@
+from abc import ABCMeta, abstractmethod
+from typing import Any, Dict, List, Optional, Sequence, Type, Union
+import numpy as np
+from bgp.simglucose.envs.glucose_obs_wrapper import GlucoseObservation
+
+class RewardFunction(metaclass=ABCMeta):
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        pass
+
+    @abstractmethod
+    def calculate_reward(
+        self, prev_obs: GlucoseObservation, action: float, obs: GlucoseObservation
+    ) -> float:
+        # Input: the previous observation, the action taken, and the current observation
+        # resulting from that action and the previous observation
+        pass

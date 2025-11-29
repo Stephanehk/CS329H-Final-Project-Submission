@@ -1,0 +1,9 @@
+{
+    "stage": [
+        "Stage0Reward",
+        "Stage1Reward",
+        "Stage2Reward",
+        "Stage3Reward",
+        "Stage4Reward"
+    ]
+}

@@ -1,0 +1,24 @@
+from abc import ABCMeta, abstractmethod
+from typing import Any, Dict, List, Optional, Sequence, Type, Union
+import numpy as np
+from flow_reward_misspecification.flow.envs.traffic_obs_wrapper import TrafficObservation
+
+#Implementation Notes:
+#(1) Each vehicle, inlcuding RL vehicles and other vehicles on the road, is a stakeholder in this enviroment. 
+#(2) To aggregate metrics over all vehicles (i.e., stakeholders), use operations over the corrosponding arrays (e.g., np.mean(obs.all_vehicle_speeds) computes the mean speed of all vehicles in m/s, np.mean(obs.follower_headways) computes the mean headway of all follower vehicles to their leader in m, and so on)
+#(3) action consists of a vector of bounded accelerations for each autonomous vehicle (i.e., stakeholder) $i$ in m/s^2. The acceleration for each autonomous vehicle, i.e., the applied action, is stored in obs.ego_vehicle_accels.
+#(4) obs.target_velocity specifies the target velocity for all autonomous vehicles. It is against the law to drive faster than this.
+#(5) The observations do not provide information about statistics across time; all measurements are for a single timestep.
+#(6) If obs.fail is True, then the task ends. It cannot be true more than once.
+
+class RewardFunction(metaclass=ABCMeta):
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        pass
+
+    @abstractmethod
+    def calculate_reward(
+        self, prev_obs: TrafficObservation, action, obs: TrafficObservation
+    ) -> float:
+        # Input: the previous observation, the action taken, and the current observation
+        # resulting from that action and the previous observation
+        pass

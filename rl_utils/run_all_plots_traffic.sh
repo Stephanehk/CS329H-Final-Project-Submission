@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# SLURM_IDS=(12738089 12738091 12738092 12738093 12738094 12738095 12738096 12738097 12738098 12738099 12738100 12738101 12738102 12738103 12738104 12738105 12738106 12738107 12738108 12738109 12738110 12738111 12738112 12738113 12738114)
+#flipped sign of above:
+SLURM_IDS=(12738115 12738116 12738117 12738118 12738119 12738120 12738121 12738124 12738125 12738126 12738127 12738128 12738129 12738130 12738131 12738132 12738133 12738134 12738135 12738136 12738137 12738138 12738139 12738140 12738141)
+
+for ID in "${SLURM_IDS[@]}"; do
+    LOGFILE="/next/u/stephhk/llm_reward_design/gt_rew_fn_run_logs/slurmjob_${ID}.err"
+    OUTDIR="/next/u/stephhk/llm_reward_design/traffic_rl_gt_rew_fns"
+    OUTFILE="${OUTDIR}/traffic_${ID}.png"
+
+    if [[ -f "$LOGFILE" ]]; then
+        mkdir -p "$OUTDIR"
+        echo "[INFO] Processing $LOGFILE → $OUTFILE"
+        python plot_results.py --logfile "$LOGFILE" --save "$OUTFILE"
+    else
+        echo "[WARN] Skipping $LOGFILE (does not exist)"
+    fi
+done

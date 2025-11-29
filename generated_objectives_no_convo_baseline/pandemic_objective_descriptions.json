@@ -1,0 +1,10 @@
+{
+    "StageLevel0Reward": "Measures if the regulations are at Stage 0, indicating no restrictions. 0 indicates the stage is not 0, 1 indicates the stage is 0.",
+    "StageLevel1Reward": "Measures if the regulations are at Stage 1, where hygiene is encouraged and gatherings are limited. 0 indicates the stage is not 1, 1 indicates the stage is 1.",
+    "StageLevel2Reward": "Measures if the regulations are at Stage 2, requiring hygiene and masks with limited gatherings. 0 indicates the stage is not 2, 1 indicates the stage is 2.",
+    "StageLevel3Reward": "Measures if the regulations are at Stage 3, enforcing stricter measures with banned gatherings. 0 indicates the stage is not 3, 1 indicates the stage is 3.",
+    "StageLevel4Reward": "Measures if the regulations are at Stage 4, with the most severe restrictions. 0 indicates the stage is not 4, 1 indicates the stage is 4.",
+    "InfectionControlReward": "Measures the change in the total proportion of infected and critical cases. The more positive the value, the more the total cases have decreased, indicating better infection control.",
+    "MinimizeDeathsReward": "Measures the change in the proportion of deaths. The more positive the value, the more deaths have decreased, indicating better outcomes in minimizing deaths.",
+    "RecoveryRateReward": "Measures the change in the proportion of recovered cases. The more positive the value, the more recoveries have increased, indicating better recovery rates."
+}

@@ -1,0 +1,10 @@
+{
+    "StageLevel0Reward": "Range: {0, 1}',  # Discrete values, rewards only if the current stage is 0",
+    "StageLevel1Reward": "Range: {0, 1}',  # Discrete values, rewards only if the current stage is 1",
+    "StageLevel2Reward": "Range: {0, 1}',  # Discrete values, rewards only if the current stage is 2",
+    "StageLevel3Reward": "Range: {0, 1}',  # Discrete values, rewards only if the current stage is 3",
+    "StageLevel4Reward": "Range: {0, 1}',  # Discrete values, rewards only if the current stage is 4",
+    "InfectionControlReward": "Range: (-inf, inf)',  # Continuous unbounded values, based on change in total cases",
+    "MinimizeDeathsReward": "Range: (-inf, inf)',  # Continuous unbounded values, negative penalty for increased deaths",
+    "RecoveryRateReward": "Range: (-inf, inf)',  # Continuous unbounded values, based on change in recovery rates"
+}

@@ -1,0 +1,7 @@
+{
+    "SpeedDifferenceFromTarget": "Range: (-inf, 0)',  # Negative reward for deviation from target velocity, unbounded below",
+    "SpeedDifferenceWithLeader": "Range: (-inf, 0)',  # Negative reward for speed difference with leader, unbounded below",
+    "HeadwayToLeader": "Range: [0, inf)',  # Positive reward for maintaining headway, unbounded above",
+    "SpeedDifferenceWithFollower": "Range: (-inf, 0)',  # Negative reward for speed difference with follower, unbounded below",
+    "ContinuousCollisionPenalty": "Range: (-inf, 0)',  # Negative penalty for collision based on acceleration, unbounded below"
+}

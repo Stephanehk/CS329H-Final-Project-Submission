@@ -1,0 +1,8 @@
+{
+    "InfectedStat": "Measures the number of infected individuals in the observed timestep.",
+    "DeadStat": "Measures the number of deceased individuals in the observed timestep.",
+    "CriticalStat": "Measures the number of critically ill individuals in the observed timestep.",
+    "RecoveredStat": "Measures the number of recovered individuals in the observed timestep.",
+    "InfectionAboveThresholdReward": "Indicates whether the infection level is above a certain threshold in the observed timestep.",
+    "Stage": "Indicates the current stage of the pandemic response in the observed timestep."
+}

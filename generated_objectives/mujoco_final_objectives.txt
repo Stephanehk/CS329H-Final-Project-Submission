@@ -1,0 +1,76 @@
+OBJECTIVE: objective_0  
+VARIABLES: x-coordinate of the torso (position[0])  
+MEASUREMENT: Difference in x-coordinate over time  
+AGGREGATION: Sum of differences over time intervals  
+PATTERNS: Consistent increase in x-coordinate indicates forward movement  
+NOTES: Ensures measurement of forward distance traveled.  
+
+OBJECTIVE: objective_1  
+VARIABLES: x-coordinate of the torso (position[0]), time step (obs.dt)  
+MEASUREMENT: Time taken to reach a specific x-coordinate  
+AGGREGATION: Sum of time steps until the goal location is reached  
+PATTERNS: Rapid decrease in time indicates improved performance  
+NOTES: Assumes a defined goal location for accurate measurement.  
+
+OBJECTIVE: objective_2  
+VARIABLES: z-coordinate of the torso (position[2])  
+MEASUREMENT: Count instances where the z-coordinate remains within the healthy range  
+AGGREGATION: Count over time intervals  
+PATTERNS: Consistent healthy z-position indicates stability and balance  
+NOTES: Uses is_healthy() for efficient detection.  
+
+OBJECTIVE: objective_3  
+VARIABLES: Joint angles (position[7] to position[14]), joint angular velocities (velocity[6] to velocity[13])  
+MEASUREMENT: Calculate total torque exerted by each joint  
+AGGREGATION: Sum of torque values over time intervals  
+PATTERNS: Higher cumulative torque suggests increased energy consumption and potential wear  
+NOTES: Serves as a proxy for energy consumption and wear on components.  
+
+OBJECTIVE: objective_4  
+VARIABLES: Joint angular velocities (velocity[6] to velocity[13])  
+MEASUREMENT: Mean of joint angular velocities  
+AGGREGATION: Average over time intervals  
+PATTERNS: Higher average velocities could correlate with increased energy consumption  
+NOTES: Provides insight into joint activity levels.  
+
+OBJECTIVE: objective_5  
+VARIABLES: Joint angles (position[7] to position[14]), joint angular velocities (velocity[6] to velocity[13])  
+MEASUREMENT: Frequency of high-torque applications  
+AGGREGATION: Count of instances exceeding a torque threshold over time intervals  
+PATTERNS: More frequent high-torque events suggest increased operational costs  
+NOTES: Indicates potential maintenance needs and wear.  
+
+OBJECTIVE: objective_6  
+VARIABLES: Joint angles (position[7] to position[14])  
+MEASUREMENT: Maximum deviation from expected joint angles  
+AGGREGATION: Record maximum deviation throughout the task  
+PATTERNS: Significant deviations indicate potential mechanical issues  
+NOTES: Helps identify mechanical strain events.  
+
+OBJECTIVE: objective_7  
+VARIABLES: x-coordinate and y-coordinate of the torso (position[0] and position[1])  
+MEASUREMENT: Changes in coordinates to detect trajectory changes  
+AGGREGATION: Count significant trajectory changes over time intervals  
+PATTERNS: Frequent abrupt changes indicate instability  
+NOTES: Defines thresholds for significant changes.  
+
+OBJECTIVE: objective_8  
+VARIABLES: x-orientation, y-orientation, z-orientation of the torso (position[3] to position[5])  
+MEASUREMENT: Track changes in orientation angles  
+AGGREGATION: Monitor changes over time intervals  
+PATTERNS: Consistent orientations indicate stable posture  
+NOTES: Define expected ranges for angles.  
+
+OBJECTIVE: objective_9  
+VARIABLES: Joint angles (position[7] to position[14]), joint angular velocities (velocity[6] to velocity[13])  
+MEASUREMENT: Calculate a performance index based on the ratio of angular velocities to torque exerted  
+AGGREGATION: Average the performance index over time intervals  
+PATTERNS: Improved performance index indicates better joint optimization  
+NOTES: Aims for joint performance improvement.  
+
+OBJECTIVE: objective_10  
+VARIABLES: x-coordinate and y-coordinate of the torso (position[0] and position[1])  
+MEASUREMENT: Track oscillations in movement patterns  
+AGGREGATION: Count oscillations over time intervals  
+PATTERNS: Frequent oscillations suggest instability  
+NOTES: Define thresholds for oscillation detection.  

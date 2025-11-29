@@ -1,0 +1,27 @@
+{
+    "BgStdReward": "Measures the variability in blood glucose levels, encouraging stability by penalizing high standard deviation.'",
+    "BgTimeInRangeReward": "Calculates the fraction of blood glucose readings that fall within the target range of 70 to 180 mg/dL.'",
+    "HypoCountReward": "Counts the number of hypoglycemic episodes where blood glucose falls below 70 mg/dL, providing a penalty for occurrences.'",
+    "HyperCountReward": "Counts the number of hyperglycemic episodes where blood glucose exceeds 180 mg/dL, providing a penalty for occurrences.'",
+    "SevereHypoCountReward": "Counts the instances of severe hypoglycemia where blood glucose drops below 54 mg/dL, applying a penalty for each occurrence.'",
+    "CostReward": "Rewards based on the negative expected cost, encouraging lower overall costs associated with diabetes management.'",
+    "InsulinStdReward": "Measures the variability in insulin dosing, encouraging consistent administration by penalizing high standard deviation.'",
+    "BgDropPerInsReward": "Rewards the decrease in blood glucose relative to the amount of insulin administered, promoting effective insulin use.'",
+    "MealInsulinTimeDiffReward": "Encourages timely insulin administration relative to meal times by penalizing delays in dosing.'",
+    "BgCheckProportionReward": "Rewards the proportion of valid blood glucose readings taken, promoting regular monitoring and engagement.'",
+    "DataValidityProportionReward": "Measures the average proportion of valid insulin and carbohydrate entries, encouraging accurate logging of data.'",
+    "InsulinAdjustmentSlopeReward": "Encourages insulin adjustments proportional to deviations in blood glucose from a target of 100 mg/dL.'",
+    "BgMeanProximityReward": "Rewards the average blood glucose level being close to a target of 100 mg/dL, promoting optimal control.'",
+    "ChoStdReward": "Measures the variability in carbohydrate intake, encouraging consistent meal planning by penalizing high standard deviation.'",
+    "PostMealBgDiffReward": "Evaluates the change in blood glucose levels before and after meals, rewarding effective management of post-meal spikes.'",
+    "TimeInRangeCostRatioReward": "Balances the fraction of time in the target blood glucose range against the expected cost of management.'",
+    "ConcurrentBgInsulinIncPenalty": "Penalizes instances where both blood glucose and insulin administration increase simultaneously, indicating poor management.'",
+    "ChoDropBgHighPenalty": "Penalizes reductions in carbohydrate intake when blood glucose is high, warning against potential hypoglycemia risk.'",
+    "RapidBgRisePenalty": "Penalizes rapid increases in blood glucose levels, indicating ineffective insulin response or glucose management.'",
+    "BgStdPenalty": "Penalizes high variability in blood glucose readings, discouraging rapid fluctuations that can complicate diabetes management.'",
+    "InsulinIncCostDecPenalty": "Penalizes situations where insulin administration increases while costs decrease, indicating potential management issues.'",
+    "InsulinDropBgHighPenalty": "Penalizes reductions in insulin administration when blood glucose levels are high, risking uncontrolled hyperglycemia.'",
+    "ChoDropBgRisePenalty": "Penalizes reductions in carbohydrate intake paired with increases in blood glucose levels, indicating potential mismanagement.'",
+    "CostSpikeNoChangePenalty": "Penalizes unexpected spikes in costs without corresponding changes in insulin or blood glucose levels, indicating inefficiency.'"
+}
+

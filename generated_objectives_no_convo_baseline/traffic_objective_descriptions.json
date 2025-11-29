@@ -1,0 +1,7 @@
+{
+    "SpeedDifferenceFromTarget": "Measures how close the ego vehicle speeds are to the target velocity. The more negative the value, the greater the deviation from the target velocity.",
+    "SpeedDifferenceWithLeader": "Measures the speed difference between ego vehicles and their leaders. The more negative the value, the greater the speed difference with the leader.",
+    "HeadwayToLeader": "Measures the headway distance between ego vehicles and their leaders. The more positive the value, the greater the headway distance maintained.",
+    "SpeedDifferenceWithFollower": "Measures the speed difference between ego vehicles and their followers. The more negative the value, the greater the speed difference with the follower.",
+    "ContinuousCollisionPenalty": "Applies a penalty based on the occurrence of a collision and the accelerations involved. The more negative the value, the more severe the conditions leading to a collision."
+}

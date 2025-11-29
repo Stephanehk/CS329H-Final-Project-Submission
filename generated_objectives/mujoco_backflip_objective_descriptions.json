@@ -1,0 +1,14 @@
+{
+    "ZCoordinateHealthDistance": "Measures the deviation of the z-coordinate from a healthy range. The more negative the value, the further the z-coordinate is from the healthy range.",
+    "FullRotationAngularVelocity": "Measures the degree of rotation achieved by the ant based on its angular velocities. The more positive the value, the closer the total rotation is to a full 360 degrees.",
+    "LandingLocationAccuracy": "Measures the distance from the target landing position at the origin. The more negative the value, the further the landing position is from the target.",
+    "StabilityDurationPostLanding": "Measures the duration for which the ant remains stable post-landing. The more positive the value, the longer the ant remains stable after landing.",
+    "FlipDuration": "Tracks the total duration of the flip. The more positive the value, the longer the flip lasts.",
+    "MaximumZCoordinateValue": "Records the maximum height reached by the z-coordinate during the flip. The more positive the value, the higher the z-coordinate reached during the flip.",
+    "MeanAngularVelocityTorso": "Calculates the average angular velocity of the torso. The more positive the value, the greater the average angular velocity of the torso.",
+    "CollisionImpactAssessment": "Evaluates the total contact force experienced by the ant. The more negative the value, the higher the total contact force experienced.",
+    "JointMovementSmoothness": "Assesses the smoothness of joint movements by evaluating changes in joint angular velocities. The more negative the value, the less smooth the joint movements are.",
+    "MaximumContactForceDuringLanding": "Measures the maximum contact force exerted during landing. The more negative the value, the greater the maximum contact force experienced during landing.",
+    "EnergyUtilizationZCoordinateChanges": "Estimates the energy utilization based on angular velocities and changes in the z-coordinate. The more negative the value, the higher the energy utilization related to z-coordinate changes.",
+    "PerformanceVarianceConsistencyAcrossTrials": "Calculates the variance in performance metrics across trials. The more negative the value, the higher the variance in performance across trials."
+}

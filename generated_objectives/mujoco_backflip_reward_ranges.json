@@ -1,0 +1,14 @@
+{
+    "ZCoordinateHealthDistance": "Range: (-inf, inf)',  # Continuous unbounded",
+    "FullRotationAngularVelocity": "Range: [0, inf)',  # Continuous semi-bounded",
+    "LandingLocationAccuracy": "Range: [0, inf)',  # Continuous semi-bounded",
+    "StabilityDurationPostLanding": "Range: [0, inf)',  # Continuous semi-bounded",
+    "FlipDuration": "Range: [0, inf)',  # Continuous semi-bounded",
+    "MaximumZCoordinateValue": "Range: [0, inf)',  # Continuous semi-bounded",
+    "MeanAngularVelocityTorso": "Range: [0, inf)',  # Continuous semi-bounded",
+    "CollisionImpactAssessment": "Range: [0, inf)',  # Continuous semi-bounded",
+    "JointMovementSmoothness": "Range: (-inf, 0]',  # Continuous semi-bounded",
+    "MaximumContactForceDuringLanding": "Range: [0, inf)',  # Continuous semi-bounded",
+    "EnergyUtilizationZCoordinateChanges": "Range: (-inf, 0]',  # Continuous semi-bounded",
+    "PerformanceVarianceConsistencyAcrossTrials": "Range: (-inf, 0]',  # Continuous semi-bounded"
+}

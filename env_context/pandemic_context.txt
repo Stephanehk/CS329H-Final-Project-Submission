@@ -1,0 +1,143 @@
+# Confidential, Copyright 2020, Sony Corporation of America, All rights reserved.
+from dataclasses import dataclass
+from typing import Optional, Sequence, Type, cast
+
+import numpy as np
+
+from .ids import LocationID
+from .infection_model import sorted_infection_summary
+from .sim_state import PandemicSimState
+from dataclasses import dataclass
+from typing import Dict, Mapping, Tuple, Type
+
+class InfectionSummary(Enum):
+    NONE: str
+    INFECTED: str
+    CRITICAL: str
+    RECOVERED: str
+    DEAD: str
+
+@dataclass
+class PandemicObservation:
+    """Dataclass that updates numpy arrays with information from PandemicSimState. Typically, this observation is
+    used by the reinforcement learning interface."""
+
+    stage: np.ndarray # stage indicates how severe the existing regulations are, with 0 being no restrictions and 4 being the most severe restrictions.
+    global_infection_summary: np.ndarray # Specifies the number of people with each infection summary, normalized between 0 and 1
+    global_infection_summary_alpha: np.ndarray #Specifies the number of people with each alpha infection summary, normalized between 0 and 1
+    global_infection_summary_delta: np.ndarray #Specifies the number of people with each delta infection summary, normalized between 0 and 1
+    global_testing_summary: np.ndarray # Specifies the number of people with each infection summary after testing, normalized between 0 and 1
+    global_testing_summary_alpha: np.ndarray #Specifies the number of people with each alpha infection summary after testing, normalized between 0 and 1
+    global_testing_summary_delta: np.ndarray  #Specifies the number of people with each delta infection summary after testing, normalized between 0 and 1
+    infection_above_threshold: np.ndarray #A boolean that is set to True if the infection goes above a set threshold.
+    time_day: np.ndarray #Note: this is an internal variable for the pandemic simulator, and should likely not be used to implement any objective.
+    state: PandemicSimState #Note: this is an internal variable for the pandemic simulator, and should likely not be used to implement any objective
+
+    @classmethod
+    def create_empty(
+        cls: Type["PandemicObservation"],
+        history_size: int = 1,
+    ) -> "PandemicObservation":
+        """
+        Creates an empty observation TNC layout array.
+
+        :param history_size: Size of history. If set > 1, the observation can hold information from multiple sequences
+            of PandemicSimStates.
+        :return: an empty PandemicObservation instance
+        """
+        return PandemicObservation(
+            #shows the # of people who are INFECTED, CRITICAL, RECOVERED, DEAD, and NONE
+            global_infection_summary=np.zeros((history_size, 1, len(InfectionSummary))),
+            global_infection_summary_alpha=np.zeros(
+                (history_size, 1, len(InfectionSummary))
+            ),
+            global_infection_summary_delta=np.zeros(
+                (history_size, 1, len(InfectionSummary))
+            ),
+            global_testing_summary=np.zeros((history_size, 1, len(InfectionSummary))),
+            global_testing_summary_alpha=np.zeros(
+                (history_size, 1, len(InfectionSummary))
+            ),
+            global_testing_summary_delta=np.zeros(
+                (history_size, 1, len(InfectionSummary))
+            ),
+            stage=np.zeros((history_size, 1, 1)),
+            infection_above_threshold=np.zeros((history_size, 1, 1)),
+            time_day=np.zeros((history_size, 1, 1)),
+            state=None,
+            None,
+        )
+
+    def update_obs_with_sim_state(
+        self,
+        sim_state: PandemicSimState,
+        hist_index: int = 0,
+    ) -> None:
+        """
+        Update the PandemicObservation with the information from PandemicSimState.
+
+        :param sim_state: PandemicSimState instance
+        :param hist_index: history time index
+        """
+
+        assert hist_index < self.global_infection_summary.shape[0]
+        
+        gis = np.asarray(
+            [sim_state.global_infection_summary[k] for k in sorted_infection_summary]
+        )[None, None, ...]
+        gis_a = np.asarray(
+            [
+                sim_state.global_infection_summary_alpha[k]
+                for k in sorted_infection_summary
+            ]
+        )[None, None, ...]
+        gis_d = np.asarray(
+            [
+                sim_state.global_infection_summary_delta[k]
+                for k in sorted_infection_summary
+            ]
+        )[None, None, ...]
+
+        self.global_infection_summary[hist_index, 0] = gis / np.sum(gis)
+        self.global_infection_summary_alpha[hist_index, 0] = gis_a / np.sum(gis_a)
+        self.global_infection_summary_delta[hist_index, 0] = gis_d / np.sum(gis_d)
+
+        gts = np.asarray(
+            [
+                sim_state.global_testing_state.summary[k]
+                for k in sorted_infection_summary
+            ]
+        )[None, None, ...]
+        gts_a = np.asarray(
+            [
+                sim_state.global_testing_state_alpha.summary[k]
+                for k in sorted_infection_summary
+            ]
+        )[None, None, ...]
+        gts_d = np.asarray(
+            [
+                sim_state.global_testing_state_delta.summary[k]
+                for k in sorted_infection_summary
+            ]
+        )[None, None, ...]
+
+        self.global_testing_summary[hist_index, 0] = gts / np.sum(gts)
+        self.global_testing_summary_alpha[hist_index, 0] = gts_a / np.sum(gts_a)
+        self.global_testing_summary_delta[hist_index, 0] = gts_d / np.sum(gts_d)
+
+        self.stage[hist_index, 0] = sim_state.regulation_stage
+
+        self.infection_above_threshold[hist_index, 0] = int(
+            sim_state.infection_above_threshold
+        )
+
+        self.time_day[hist_index, 0] = (
+            int(sim_state.sim_time.day) * 24 + int(sim_state.sim_time.hour)
+        ) / (365 * 24)
+
+        self.state = sim_state
+
+    @property
+    def infection_summary_labels(self) -> Sequence[str]:
+        """Return the label for each index in global_infection(or testing)_summary observation entry"""
+        return [k.value for k in sorted_infection_summary]

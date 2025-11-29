@@ -1,0 +1,16 @@
+{
+    "SumInfectedAndCriticalReward": "Measures the sum of infected and critical cases over time. The more negative the value, the higher the sum of infections and critical cases, indicating a worsening situation.",
+    "SumCriticalCasesReward": "Measures the total number of critical cases over time. The more negative the value, the higher the number of critical cases, indicating increased healthcare strain.",
+    "SumDeathsReward": "Measures the total number of deaths over time. The more negative the value, the higher the number of deaths, indicating a more severe pandemic impact.",
+    "SumICUCriticalCasesReward": "Measures the total number of critical cases needing ICU care over time. The more negative the value, the greater the demand for ICU resources, indicating higher resource strain.",
+    "SumRecoveriesReward": "Measures the total number of recoveries over time. The more positive the value, the more recoveries have occurred, indicating improving health outcomes.",
+    "Stage0Reward": "Detects if the current restriction stage is 0 (no measures). 0 indicates the stage is not 0, 1 indicates the stage is 0.",
+    "Stage1Reward": "Detects if the current restriction stage is 1 (minimal measures). 0 indicates the stage is not 1, 1 indicates the stage is 1.",
+    "Stage2Reward": "Detects if the current restriction stage is 2 (moderate measures). 0 indicates the stage is not 2, 1 indicates the stage is 2.",
+    "Stage3Reward": "Detects if the current restriction stage is 3 (high measures). 0 indicates the stage is not 3, 1 indicates the stage is 3.",
+    "Stage4Reward": "Detects if the current restriction stage is 4 (maximum measures). 0 indicates the stage is not 4, 1 indicates the stage is 4.",
+    "InfectionAboveThresholdReward": "Measures the change in enforcement actions due to infections above a threshold. The more negative the value, the higher the increase in enforcement actions, indicating greater compliance needs.",
+    "MaxCriticalCasesReward": "Measures the maximum number of critical cases at any point in time. The more negative the value, the higher the peak of critical cases, indicating severe healthcare demand.",
+    "MinRecoveryReward": "Measures the minimum recovery levels across the population. The more positive the value, the better the recovery levels, indicating effective healthcare interventions.",
+    "InfectionVarianceReward": "Measures the variance in infection rates over time. The more negative the value, the higher the variance, indicating instability in infection trends."
+}

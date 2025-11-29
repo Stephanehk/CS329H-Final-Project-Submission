@@ -1,0 +1,13 @@
+{
+    "ForwardDistanceReward": "Measures the change in the x-coordinate of the robot's torso, indicating forward movement. The more positive the value, the more forward distance the robot has traveled.",
+    "ProgressTowardsGoalReward": "Measures progress towards a goal by the change in x-coordinate. The more positive the value, the more progress made towards the goal.",
+    "HealthyZPositionCount": "Checks if the z-coordinate of the robot is within a healthy range. 0 indicates the robot is not healthy, 1 indicates the robot is healthy.",
+    "TotalTorqueExerted": "Calculates the total torque exerted by the robot's joints. The more positive the value, the more torque is being exerted, indicating higher energy consumption.",
+    "MeanJointAngularVelocities": "Averages the absolute values of the joint angular velocities, indicating joint activity. The more positive the value, the more active the joints are.",
+    "TorqueApplicationFrequency": "Measures the frequency of torque application across joints. The more positive the value, the more frequently torque is being applied.",
+    "MaxJointAngleDeviation": "Calculates the maximum deviation of joint angles from expected positions. The more positive the value, the greater the deviation from expected joint positions.",
+    "TrajectoryChangeCount": "Measures significant changes in the robot's trajectory based on distance moved. The more positive the value, the more significant the changes in trajectory.",
+    "OrientationStability": "Tracks changes in the robot's orientation angles to assess stability. The more negative the value, the less stable the robot's orientation is.",
+    "JointPerformanceIndex": "Calculates a performance index based on the ratio of angular velocities to torque exerted. The more positive the value, the more efficient the joint performance.",
+    "MovementOscillationCount": "Measures oscillations in movement patterns based on distance moved. The more positive the value, the more oscillatory the movement is."
+}

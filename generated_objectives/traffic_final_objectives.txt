@@ -1,0 +1,75 @@
+**NEW OBJECTIVES:**
+
+**OBJECTIVE: objective_7**  
+**VARIABLES:** `obs.ego_speeds`  
+**MEASUREMENT:** Calculate the minimum of `obs.ego_speeds`  
+**AGGREGATION:** Minimum over the evaluation period  
+**PATTERNS:** Look for the lowest speed among RL vehicles  
+**NOTES:** Measures the slowest speed of RL-controlled vehicles, reflecting potential safety concerns.
+
+**OBJECTIVE: objective_8**  
+**VARIABLES:** `obs.leader_headways`, `obs.follower_headways`  
+**MEASUREMENT:** Calculate the minimum of both `obs.leader_headways` and `obs.follower_headways`  
+**AGGREGATION:** Minimum over the evaluation period  
+**PATTERNS:** Look for minimum headway values  
+**NOTES:** Measures the shortest distance maintained by RL vehicles, indicating safety risks.
+
+**OBJECTIVE: objective_9**  
+**VARIABLES:** `obs.all_vehicle_speeds`  
+**MEASUREMENT:** Calculate the maximum of `obs.all_vehicle_speeds`  
+**AGGREGATION:** Maximum over the evaluation period  
+**PATTERNS:** Look for the highest speed among all vehicles  
+**NOTES:** Measures the fastest speed achieved by any vehicle, indicating potential safety risks.
+
+---
+
+**PREVIOUSLY IDENTIFIED OBJECTIVES:**
+
+**OBJECTIVE: objective_0**  
+**VARIABLES:** `obs.fail`  
+**MEASUREMENT:** Direct count of instances where `obs.fail` is True  
+**AGGREGATION:** Sum over the evaluation period  
+**PATTERNS:** Look for a total count of failures  
+**NOTES:** This directly measures the number of collisions.
+
+**OBJECTIVE: objective_1**  
+**VARIABLES:** `obs.ego_speeds`  
+**MEASUREMENT:** Calculate the mean of `obs.ego_speeds`  
+**AGGREGATION:** Mean over the evaluation period  
+**PATTERNS:** Consistently high or low speeds  
+**NOTES:** Measures average speed during merging.
+
+**OBJECTIVE: objective_2**  
+**VARIABLES:** `obs.leader_headways`, `obs.follower_headways`  
+**MEASUREMENT:** Calculate the mean of both `obs.leader_headways` and `obs.follower_headways`  
+**AGGREGATION:** Mean over the evaluation period  
+**PATTERNS:** Look for minimum safe headway thresholds  
+**NOTES:** Measures distance maintained from surrounding vehicles.
+
+**OBJECTIVE: objective_3**  
+**VARIABLES:** `obs.all_vehicle_speeds`, `obs.target_velocity`  
+**MEASUREMENT:** Count instances where `obs.all_vehicle_speeds` exceed `obs.target_velocity`  
+**AGGREGATION:** Sum over the evaluation period  
+**PATTERNS:** Frequent exceedances indicate non-compliance  
+**NOTES:** This measures compliance with traffic regulations and indirectly avoiding traffic citations.
+
+**OBJECTIVE: objective_4**  
+**VARIABLES:** `obs.ego_vehicle_accels`  
+**MEASUREMENT:** Calculate the mean of `obs.ego_vehicle_accels`  
+**AGGREGATION:** Mean over the evaluation period  
+**PATTERNS:** Look for smooth acceleration patterns  
+**NOTES:** Measures acceleration efficiency.
+
+**OBJECTIVE: objective_5**  
+**VARIABLES:** `obs.all_vehicle_speeds`  
+**MEASUREMENT:** Calculate the mean of `obs.all_vehicle_speeds`  
+**AGGREGATION:** Mean over the evaluation period  
+**PATTERNS:** Consistent speeds suggest smooth traffic flow  
+**NOTES:** Measures maintaining traffic flow.
+
+**OBJECTIVE: objective_6**  
+**VARIABLES:** `obs.fail`, `obs.leader_headways`, `obs.follower_headways`  
+**MEASUREMENT:** Count instances of `obs.fail` and ensure headways are above a minimum threshold  
+**AGGREGATION:** Sum occurrences and mean headways over the evaluation period  
+**PATTERNS:** Low headway values suggest potential safety issues  
+**NOTES:** Measures ensuring passenger safety.

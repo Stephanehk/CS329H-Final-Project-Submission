@@ -1,0 +1,9 @@
+{
+    "Crash": "Minimize the number of collisions with other vehicles or obstacles.",
+    "MeanVelocity": "Maximize the average speed of all vehicles.",
+    "MinVelocity": "Maximize the minimum speed of all vehicles.",
+    "SquaredSpeedAboveMax": "Minimize the squared amount by which vehicle speeds exceed the maximum speed.",
+    "FuelProxy": "Minimize a proxy for fuel consumption.",
+    "BreakPenalty": "Minimize the penalty based on the frequency of hard braking events.",
+    "HeadwayPenalty": "Minimize the penalty based on the average headway distances between vehicles."
+}

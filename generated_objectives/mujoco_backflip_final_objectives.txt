@@ -1,0 +1,80 @@
+### Objective Compilation
+
+#### OBJECTIVE: objective_0
+- **VARIABLES:** Z-coordinate of the torso, angular velocities of the torso
+- **MEASUREMENT:** Ensure the z-coordinate returns to the standing range and that there is a full 360-degree rotation based on angular velocities.
+- **AGGREGATION:** Track the z-coordinate and angular velocities over the duration of the flip.
+- **PATTERNS:** Successful completion indicated by a healthy z-coordinate and full rotation.
+- **NOTES:** Combines successful completion and backflip effectiveness.
+
+#### OBJECTIVE: objective_1
+- **VARIABLES:** X and Y coordinates of the torso
+- **MEASUREMENT:** Record the final x and y positions to determine landing location.
+- **AGGREGATION:** Not required; measure at the moment of landing.
+- **PATTERNS:** Consistent landing positions indicate stability.
+- **NOTES:** Captures landing accuracy.
+
+#### OBJECTIVE: objective_2
+- **VARIABLES:** Z-coordinate of the torso, contact forces
+- **MEASUREMENT:** Monitor z-coordinate stability and contact forces for stability duration.
+- **AGGREGATION:** Measure the time from landing until instability is detected.
+- **PATTERNS:** Stable z-coordinate and minimal force fluctuations post-landing.
+- **NOTES:** Measures stability duration post-landing.
+
+#### OBJECTIVE: objective_3
+- **VARIABLES:** Time step (`dt`), z-coordinate of the torso
+- **MEASUREMENT:** Count the time steps from the start to the end of the flip.
+- **AGGREGATION:** Sum of time steps.
+- **PATTERNS:** Track changes in the z-coordinate for start and end points.
+- **NOTES:** Measures the duration of the flip.
+
+#### OBJECTIVE: objective_4
+- **VARIABLES:** Z-coordinate of the torso
+- **MEASUREMENT:** Track the maximum z-coordinate value during the flip.
+- **AGGREGATION:** Record the peak z-coordinate.
+- **PATTERNS:** Identify the highest point reached.
+- **NOTES:** Captures the maximum height of the flip.
+
+#### OBJECTIVE: objective_5
+- **VARIABLES:** Angular velocities of the torso
+- **MEASUREMENT:** Direct use of angular velocity variables.
+- **AGGREGATION:** Calculate the mean or peak angular velocity during the flip.
+- **PATTERNS:** Consistent angular velocities throughout the flip.
+- **NOTES:** Measures angular velocity throughout the flip.
+
+#### OBJECTIVE: objective_6
+- **VARIABLES:** Contact forces
+- **MEASUREMENT:** Monitor force magnitudes to detect impacts.
+- **AGGREGATION:** Count instances of high contact forces.
+- **PATTERNS:** Spikes in contact forces indicate collisions.
+- **NOTES:** Detects collisions during the maneuver.
+
+#### OBJECTIVE: objective_7
+- **VARIABLES:** Angular velocities of joints
+- **MEASUREMENT:** Assess changes in velocities for smoothness.
+- **AGGREGATION:** Compute the mean squared difference of angular velocities.
+- **PATTERNS:** Minimal abrupt changes indicate smoothness.
+- **NOTES:** Evaluates the smoothness of limb movements.
+
+#### OBJECTIVE: objective_8
+- **VARIABLES:** Contact forces, z-coordinate of the torso
+- **MEASUREMENT:** Calculate maximum contact force during landing and correlate with z-coordinate.
+- **AGGREGATION:** Count instances where contact force exceeds a threshold.
+- **PATTERNS:** High contact forces coinciding with unstable z-coordinates.
+- **NOTES:** Proxies for injury avoidance and damage prevention.
+
+#### OBJECTIVE: objective_9
+- **VARIABLES:** Angular velocities of the torso and joints, z-coordinate changes
+- **MEASUREMENT:** Use angular velocities to estimate energy utilization related to z-coordinate changes.
+- **AGGREGATION:** Average angular velocities over the flip's duration.
+- **PATTERNS:** Trends of lower velocities with successful flips.
+- **NOTES:** Proxies for energy utilization.
+
+#### OBJECTIVE: objective_10
+- **VARIABLES:** Outcome metrics from trials (e.g., completion time, landing position)
+- **MEASUREMENT:** Compute variance of these metrics across trials.
+- **AGGREGATION:** Variance over multiple trials.
+- **PATTERNS:** Consistent performance or deviations.
+- **NOTES:** Captures performance variance consistency.
+
+This list encapsulates all measurable objectives, leveraging both original objectives and new proxies for previously unmeasurable objectives, ensuring comprehensive coverage using the available observation data.

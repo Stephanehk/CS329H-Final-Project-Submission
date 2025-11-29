@@ -1,0 +1,16 @@
+{
+    "SumInfectedAndCriticalReward": "Range: (-inf, inf)',  # Output can vary significantly based on infection rates, unbounded.",
+    "SumCriticalCasesReward": "Range: (-inf, inf)',  # Output based on cumulative critical cases, can also vary widely.",
+    "SumDeathsReward": "Range: (-inf, inf)',  # Output based on cumulative deaths, unbounded in negative direction.",
+    "SumICUCriticalCasesReward": "Range: (-inf, inf)',  # Output based on cumulative ICU critical cases, can vary widely.",
+    "SumRecoveriesReward": "Range: (-inf, inf)',  # Output based on cumulative recoveries, can be any value.",
+    "Stage0Reward": "Range: {0, 1}',  # Discrete output based on matching stage.",
+    "Stage1Reward": "Range: {0, 1}',  # Discrete output based on matching stage.",
+    "Stage2Reward": "Range: {0, 1}',  # Discrete output based on matching stage.",
+    "Stage3Reward": "Range: {0, 1}',  # Discrete output based on matching stage.",
+    "Stage4Reward": "Range: {0, 1}',  # Discrete output based on matching stage.",
+    "InfectionAboveThresholdReward": "Range: (-inf, inf)',  # Output based on the difference in enforcement actions, can vary widely.",
+    "MaxCriticalCasesReward": "Range: (-inf, inf)',  # Can return any negative value or zero, making it continuous unbounded.",
+    "MinRecoveryReward": "Range: (-inf, inf)',  # Output can vary based on minimum recovery levels, unbounded.",
+    "InfectionVarianceReward": "Range: (-inf, inf)',  # Variance can be any value, indicating stability or instability, unbounded."
+}

@@ -1,0 +1,69 @@
+OBJECTIVE: objective_0  
+VARIABLES: `global_infection_summary`, `global_testing_summary`  
+MEASUREMENT: Sum of `InfectionSummary.INFECTED` and `InfectionSummary.CRITICAL` to determine the proportion of individuals with COVID-19.  
+AGGREGATION: Sum over time to track trends.  
+PATTERNS: Look for increases or decreases in infection proportions over time.  
+NOTES: This captures overall infection levels including testing outcomes.
+
+OBJECTIVE: objective_1  
+VARIABLES: `global_infection_summary`  
+MEASUREMENT: Use the value for `InfectionSummary.CRITICAL` to determine the number of hospitalizations.  
+AGGREGATION: Sum over time for cumulative assessment.  
+PATTERNS: Monitor fluctuations indicating healthcare capacity needs.  
+NOTES: Critical cases are assumed to require hospitalization.
+
+OBJECTIVE: objective_2  
+VARIABLES: `global_infection_summary`, `global_testing_summary`  
+MEASUREMENT: Use the value for `InfectionSummary.DEAD` to track COVID-19 deaths.  
+AGGREGATION: Sum over time for cumulative tracking.  
+PATTERNS: Identify any spikes or consistent trends over intervals.  
+NOTES: Directly reflects the severity of the pandemic.
+
+OBJECTIVE: objective_3  
+VARIABLES: `global_infection_summary`  
+MEASUREMENT: Use `InfectionSummary.CRITICAL` to estimate the need for intensive care units.  
+AGGREGATION: Sum over time to assess ongoing resource needs.  
+PATTERNS: Monitor surges indicating resource strain.  
+NOTES: Critical cases overlap with ICU needs.
+
+OBJECTIVE: objective_4  
+VARIABLES: `global_infection_summary`  
+MEASUREMENT: Track `InfectionSummary.RECOVERED` to assess recovery levels.  
+AGGREGATION: Sum over time to observe recovery trends.  
+PATTERNS: Look for increases in recoveries as an indicator of population health.  
+NOTES: Higher recovery rates may suggest effective interventions.
+
+OBJECTIVE: objective_5  
+VARIABLES: `stage`  
+MEASUREMENT: Use the current value of the `stage` variable to infer levels of public gatherings and economic support needs.  
+AGGREGATION: Track changes over time to correlate with policy effectiveness.  
+PATTERNS: Identify trends where stricter stages correlate with reduced gatherings and increased support needs.  
+NOTES: The stage level directly impacts public behavior and policy efficacy.
+
+OBJECTIVE: objective_6  
+VARIABLES: `infection_above_threshold`, `global_infection_summary`  
+MEASUREMENT: Use `infection_above_threshold` to monitor compliance and enforcement needs; correlate with spikes in `InfectionSummary.INFECTED`.  
+AGGREGATION: Track over time to see how enforcement actions correlate with infection thresholds.  
+PATTERNS: Look for spikes in enforcement actions when infections exceed thresholds.  
+NOTES: This captures the indirect impact of infection levels on policy compliance.
+
+OBJECTIVE: objective_7  
+VARIABLES: `global_infection_summary`  
+MEASUREMENT: Use `InfectionSummary.CRITICAL` to determine the maximum number of hospitalizations at any given time.  
+AGGREGATION: Maximum value over time to assess peak healthcare demands.  
+PATTERNS: Look for spikes in critical cases that indicate the highest healthcare resource needs.  
+NOTES: This captures the worst-case scenario for healthcare capacity.
+
+OBJECTIVE: objective_8  
+VARIABLES: `global_infection_summary`  
+MEASUREMENT: Use `InfectionSummary.RECOVERED` to determine the minimum recovery levels in the population.  
+AGGREGATION: Minimum value over time to assess the lowest recovery rates.  
+PATTERNS: Identify trends where low recovery rates may indicate healthcare or policy failures.  
+NOTES: This highlights the need for targeted interventions for the least recovered segments.
+
+OBJECTIVE: objective_9  
+VARIABLES: `global_infection_summary`, `global_testing_summary`  
+MEASUREMENT: Calculate the variance in `InfectionSummary.INFECTED` across different time intervals to understand fluctuations.  
+AGGREGATION: Variance over time to assess the stability of infection levels.  
+PATTERNS: Look for high variance as an indicator of rapid changes in infection trends.  
+NOTES: This helps assess the unpredictability of the pandemic's impact on different communities.

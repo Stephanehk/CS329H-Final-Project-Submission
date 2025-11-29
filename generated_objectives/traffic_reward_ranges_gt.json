@@ -1,0 +1,9 @@
+{
+    "Crash": "Range:(-inf, inf)',  # Output is -1 if a collision occurs, otherwise 0.",
+    "MeanVelocity": "Range: (-inf, inf)',  # Output is based on the absolute difference from the target velocity, which can be unbounded.",
+    "MinVelocity": "Range: (-inf, 0]',  # Penalizes lower speeds, thus producing values from negative to zero.",
+    "SquaredSpeedAboveMax": "Range: [0, inf)',  # Penalizes exceeding the maximum speed, producing non-negative values.",
+    "FuelProxy": "Range: [0, inf)',  # Penalizes fuel consumption, producing non-negative values.",
+    "BreakPenalty": "Range: [0, inf)',  # Penalizes hard braking events, producing non-negative values.",
+    "HeadwayPenalty": "Range: [0, inf)',  # Penalizes short headways, producing non-negative values."
+}

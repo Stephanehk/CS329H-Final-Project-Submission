@@ -1,0 +1,13 @@
+{
+    "ForwardDistanceReward": "Range: (-inf, inf)',  # Continuous unbounded, as it measures the difference in x-coordinate, which can be any real number.",
+    "ProgressTowardsGoalReward": "Range: (-inf, inf)',  # Continuous unbounded, as it measures the change in x-coordinate, which can also be any real number.",
+    "HealthyZPositionCount": "Range: {0, 1}',  # Discrete values, as it returns 1 if healthy and 0 otherwise.",
+    "TotalTorqueExerted": "Range: [0, inf)',  # Continuous semi-bounded, as it measures the total torque exerted, which cannot be negative.",
+    "MeanJointAngularVelocities": "Range: [0, inf)',  # Continuous semi-bounded, as it averages the absolute values of joint velocities.",
+    "TorqueApplicationFrequency": "Range: [0, inf)',  # Continuous semi-bounded, as it measures the total torque, which is also non-negative.",
+    "MaxJointAngleDeviation": "Range: [0, inf)',  # Continuous semi-bounded, as it measures the maximum deviation from expected angles, which cannot be negative.",
+    "TrajectoryChangeCount": "Range: [0, inf)',  # Continuous semi-bounded, as it measures distance moved, which is non-negative.",
+    "OrientationStability": "Range: (-inf, 0)',  # Continuous semi-bounded, as it returns negative changes in orientation, indicating stability (more negative is worse).",
+    "JointPerformanceIndex": "Range: [0, inf)',  # Continuous semi-bounded, as it is based on the ratio of angular velocities to torque, which can be non-negative.",
+    "MovementOscillationCount": "Range: [0, inf)',  # Continuous semi-bounded, as it measures distance moved, which is non-negative."
+}

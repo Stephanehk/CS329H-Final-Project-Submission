@@ -1,0 +1,8 @@
+{
+    "InfectedStat": "Range: (-inf, inf)',  # Output can vary significantly based on infection rates, unbounded.",
+    "DeadStat": "Range: (-inf, inf)',  # Output based on cumulative deaths, unbounded in negative direction.",
+    "CriticalStat": "Range: (-inf, inf)',  # Output based on cumulative critical cases, can also vary widely.",
+    "RecoveredStat": "Range: (-inf, inf)',  # Output based on cumulative recoveries, can be any value.",
+    "InfectionAboveThresholdReward": "Range: (-inf, inf)',  # Output based on the difference in enforcement actions, can vary widely.",
+    "Stage": "Range: {0, 1, 2, 3, 4}',  # Discrete output based on current pandemic response stage."
+}

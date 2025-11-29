@@ -1,0 +1,12 @@
+{
+    "FailureCountReward": "Measures the occurrence of failures or collisions in the system. 0 indicates no failure, while 1 indicates a failure has occurred.",
+    "MeanEgoSpeedsReward": "Measures the average speed of ego vehicles in the fleet. The more positive the value, the higher the average speed of the ego vehicles.",
+    "MeanHeadwaysReward": "Measures the average distance between ego vehicles and their surrounding vehicles. The more positive the value, the greater the average headway distance, indicating safer distances are maintained.",
+    "SpeedExceedanceReward": "Counts the number of vehicles exceeding the target velocity. 0 indicates all vehicles are within the speed limit, while higher values indicate more vehicles are exceeding the speed limit.",
+    "MeanEgoVehicleAccelerationsReward": "Measures the average acceleration of ego vehicles. The more positive the value, the greater the average acceleration, indicating possibly more aggressive driving.",
+    "MeanAllVehicleSpeedsReward": "Measures the average speed of all vehicles in the system. The more positive the value, the higher the average speed of all vehicles, suggesting smoother traffic flow.",
+    "SafetyHeadwayFailureReward": "Balances between penalizing failures and rewarding safe headways. The more positive the value, the safer the headway distances are maintained, with fewer failures.",
+    "MinimumEgoSpeedsReward": "Measures the minimum speed recorded among ego vehicles. The more positive the value, the higher the minimum speed, indicating that all ego vehicles are maintaining a reasonable speed.",
+    "MinimumHeadwaysReward": "Measures the shortest headway distance maintained by ego vehicles. The more positive the value, the larger the minimum headway, indicating safer distances are maintained.",
+    "MaximumAllVehicleSpeedsReward": "Measures the maximum speed achieved by any vehicle in the system. The more positive the value, the higher the maximum speed recorded, indicating potential speed limit violations."
+}

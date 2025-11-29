@@ -1,0 +1,35 @@
+from abc import ABCMeta, abstractmethod
+from typing import Any, Dict, List, Optional, Sequence, Type, Union
+import numpy as np
+from from pandemic.python.pandemic_simulator.environment.interfaces import PandemicObservation, sorted_infection_summary, InfectionSummary
+
+#Implementation Notes:
+#(1) stage directly impacts the people, schools, and economy in this world, as detailed below:
+#Stage 0: No measures. No hygiene, no masks, no distancing, no gathering limits, no closures.
+#Stage 1: Hygiene encouraged, no masks, no distancing, gatherings limited (Low risk: ≤50, High risk: ≤25), no closures.
+#Stage 2: Hygiene + masks required, distancing factor 0.3, gatherings limited (Low: ≤25, High: ≤10), schools & hair salons closed.
+#Stage 3: Hygiene + masks required, distancing factor 0.5, gatherings banned (Low: 0, High: 0), schools & hair salons closed.
+#Stage 4: Hygiene + masks required, distancing factor 0.7, gatherings banned (Low: 0, High: 0), schools, hair salons, offices & retail stores closed.
+#(2) the location of each infection summary index is specified as follows:
+#infected_i = sorted_infection_summary.index(InfectionSummary.INFECTED)
+#critical_i = sorted_infection_summary.index(InfectionSummary.CRITICAL)
+#recovered_i = sorted_infection_summary.index(InfectionSummary.RECOVERED)
+#dead_i = sorted_infection_summary.index(InfectionSummary.DEAD)
+#IMPORTANT: these infection summary categories are disjoint and normalized to be proportions between 0 and 1. For example, InfectionSummary.INFECTED indexes patients who are infected but not CRITICAL or RECOVERED. All returned values are already normalized by population size.
+#(3) The total proporiton of patients with Covid-19 would be the sum of patients indexed by InfectionSummary.INFECTED and InfectionSummary.CRITICAL. 
+#(4) The total proporiton of patients in the hospital is determined by InfectionSummary.CRITICAL. 
+#(5) hist_index = -1 gets the most recent element in the corrosponding array (e.g., prev_obs.global_infection_summary[-1, -1, sorted_infection_summary.index(InfectionSummary.INFECTED)] gets the most recent infection summary, obs.stage[-1][-1].item() gets the most recent stage)
+#(6) action is a scalar variable indicating the selected regulation stage. The stage number indicates how severe the existing regulations are, with 0 being no restrictions and 3 being the most severe restrictions.
+#(7) All statistics are aggregagted over the population (i.e., the stakeholders). Individual population (i.e., stakeholder) statistics are not available.
+
+class RewardFunction(metaclass=ABCMeta):
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        pass
+
+    @abstractmethod
+    def calculate_reward(
+        self, prev_obs: PandemicObservation, action: int, obs: PandemicObservation
+    ) -> float:
+        # Input: the previous observation, the action taken, and the current observation
+        # resulting from that action and the previous observation
+        pass

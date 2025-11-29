@@ -1,0 +1,165 @@
+from bgp.simglucose.simulation.env import T1DSimEnv
+from bgp.simglucose.patient.t1dpatient import T1DPatientNew
+from bgp.simglucose.sensor.cgm import CGMSensor
+from bgp.simglucose.actuator.pump import InsulinPump
+from bgp.simglucose.simulation.scenario_gen import (
+    RandomBalancedScenario,
+    SemiRandomBalancedScenario,
+    CustomBalancedScenario,
+)
+from bgp.simglucose.controller.base import Action
+from bgp.simglucose.analysis.risk import magni_risk_index
+from bgp.rl import reward_functions
+from bgp.rl.helpers import Seed
+from bgp.rl import pid
+import bgp.simglucose.controller.basal_bolus_ctrller as bbc
+
+from importlib import resources
+
+import pandas as pd
+import numpy as np
+import joblib
+import copy
+import gymnasium
+from gymnasium import spaces
+from gymnasium.utils import seeding
+from datetime import datetime
+import warnings
+import logging
+
+from copy import deepcopy
+from ray.tune.registry import register_env
+from ray.rllib.env.multi_agent_env import make_multi_agent
+
+warnings.simplefilter(action="ignore", category=FutureWarning)
+
+
+
+@property
+def action_space(self):
+    #Actions are real positive numbers, denoting the size of the insulin bolus in medication units.
+    return spaces.Box(low=0, high=0.1, shape=(1,), dtype=np.float64)
+
+@property
+def observation_space(self):
+    #Observations are stochastic, and contain the continuous glucose monitor (CGM) observations and insulin administered
+    #To provide temporal context, we augment our observed state space to include the previous 4 hours of CGM and insulin data at 5-minute resolution
+    st = self.get_state()
+   
+    num_channels = int(np.prod(st.shape) / self.state_hist)
+    return spaces.Box(
+        low=0,
+        high=np.inf,
+        shape=(num_channels, self.state_hist),
+        dtype=np.float64,
+    )
+
+def announce_meal(self, meal_announce=None):
+    t = (
+        self.env.time.hour * 60 + self.env.time.minute
+    )  # Assuming 5 minute sampling rate
+    for i, m_t in enumerate(self.env.scenario.scenario["meal"]["time"]):
+        # round up to nearest 5
+        if m_t % 5 != 0:
+            m_tr = m_t - (m_t % 5) + 5
+        else:
+            m_tr = m_t
+        if meal_announce is None:
+            ma = self.meal_announce
+        else:
+            ma = meal_announce
+        if t < m_tr <= t + ma:
+            return self.env.scenario.scenario["meal"]["amount"][i], m_tr - t
+    return 0, 0
+
+def calculate_iob(self):
+    ins = self.env.insulin_hist
+    return np.dot(np.flip(self.iob, axis=0)[-len(ins) :], ins[-len(self.iob) :])
+
+def get_expected_patient_cost(self):
+    expected_cost = 0.32 * np.mean(self.env.insulin_hist[-1])  # Cost of the insulin.
+    if self.BG_hist[-1] < 70:
+        # Patient is hypoglycemic, so add potential cost of hospital visit.
+        expected_cost += 10 * 1350 / (12 * 24 * 365)
+    return -expected_cost
+
+def risk_index(self,BG, horizon):
+    # BG is in mg/dL
+    # horizon in samples
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        BG_to_compute = np.array(BG[-horizon:])
+        BG_to_compute[BG_to_compute < 1] = 1
+        fBG = 1.509 * (np.log(BG_to_compute) ** 1.084 - 5.381)
+        rl = 10 * fBG[fBG < 0] ** 2
+        rh = 10 * fBG[fBG > 0] ** 2
+        LBGI = np.nan_to_num(np.mean(rl))
+        HBGI = np.nan_to_num(np.mean(rh))
+        RI = LBGI + HBGI
+    return (LBGI, HBGI, RI)
+
+
+def magni_risk_index(self,BG, **kwargs):
+    bg = max(BG[-1], 1)
+    fBG = 3.5506 * (np.log(bg) ** 0.8353 - 3.7932)
+    risk = 10 * (fBG) ** 2
+    return risk
+
+def get_state(self, normalize=False):
+
+    #self.env.CGM_hist contains the history of outputs from a continuous glucose monitor (CGM)
+    bg = self.env.CGM_hist[-self.state_hist :]
+    #self.env.insulin_hist contains the history of the amount of insulin administered 
+    insulin = self.env.insulin_hist[-self.state_hist :]
+    if normalize:
+        bg = np.array(bg) / 400.0
+        insulin = np.array(insulin) * 10
+    if len(bg) < self.state_hist:
+        bg = np.concatenate((np.full(self.state_hist - len(bg), -1), bg))
+    if len(insulin) < self.state_hist:
+        insulin = np.concatenate(
+            (np.full(self.state_hist - len(insulin), -1), insulin)
+        )
+    return_arr = [bg, insulin]
+    if self.time:
+        time_dt = self.env.time_hist[-self.state_hist :]
+        time = np.array(
+            [(t.minute + 60 * t.hour) / self.sample_time for t in time_dt]
+        )
+        sin_time = np.sin(time * 2 * np.pi / self.day)
+        cos_time = np.cos(time * 2 * np.pi / self.day)
+        if normalize:
+            pass  # already normalized
+        if len(sin_time) < self.state_hist:
+            sin_time = np.concatenate(
+                (np.full(self.state_hist - len(sin_time), -1), sin_time)
+            )
+        if len(cos_time) < self.state_hist:
+            cos_time = np.concatenate(
+                (np.full(self.state_hist - len(cos_time), -1), cos_time)
+            )
+        return_arr.append(sin_time)
+        return_arr.append(cos_time)
+        if self.weekly:
+            # binary flag signalling weekend
+            if self.env.scenario.day == 5 or self.env.scenario.day == 6:
+                return_arr.append(np.full(self.state_hist, 1))
+            else:
+                return_arr.append(np.full(self.state_hist, 0))
+    if self.meal:
+        #self.env.CHO_hist contains the history of meals consumed by the patient, which are important factors impacting the patient's glucose levels
+        cho = self.env.CHO_hist[-self.state_hist :]
+        if normalize:
+            cho = np.array(cho) / 20.0
+        if len(cho) < self.state_hist:
+            cho = np.concatenate((np.full(self.state_hist - len(cho), -1), cho))
+        return_arr.append(cho)
+    #if self.meal_announce, then information is retrieved about the meals the patient has eaten. Otherwise, this information needs to be inferred. Note that self.meal_announce is typically None.
+    if self.meal_announce is not None:
+        meal_val, meal_time = self.announce_meal()
+        future_cho = np.full(self.state_hist, meal_val)
+        return_arr.append(future_cho)
+        future_time = np.full(self.state_hist, meal_time)
+        return_arr.append(future_time)
+    
+    return np.stack(return_arr)

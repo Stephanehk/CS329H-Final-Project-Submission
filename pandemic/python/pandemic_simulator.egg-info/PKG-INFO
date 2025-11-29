@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: pandemic_simulator
+Version: 1.1.0
+Summary: Sony AI PandemicSimulator
+License-File: LICENSE
+Requires-Dist: dataclasses
+Requires-Dist: istype>=0.2.0
+Requires-Dist: matplotlib
+Requires-Dist: networkx
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: probabilistic-automata>=0.4.0
+Requires-Dist: pyrsistent>=0.15.5
+Requires-Dist: pytest>=5.2.2
+Requires-Dist: PyYAML>=5.3.1
+Requires-Dist: typing-inspect>=0.5.0
+Requires-Dist: ordered-set
+Requires-Dist: cachetools>=4.1.0
+Requires-Dist: h5py>=2.10.0
+Requires-Dist: tqdm>=4.48.0
+Requires-Dist: pandas
+Requires-Dist: structlog
+Provides-Extra: test
+Dynamic: license-file
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary

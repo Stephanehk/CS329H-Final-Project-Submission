@@ -1,0 +1,33 @@
+Here's the preferred direction for each objective feature based on the given stakeholder goals and principles:
+
+- **MeanEgoSpeedsReward**: lower_is_better  
+  Rationale: Slower autonomous vehicle speeds are acceptable if they result in enhanced safety and less disruption.
+
+- **MeanHeadwaysReward**: higher_is_better  
+  Rationale: Larger headway distances are preferred to enhance safety by maintaining generous distances between vehicles.
+
+- **MeanEgoVehicleAccelerationsReward**: lower_is_better  
+  Rationale: Moderated accelerations prevent aggressive driving, aligning with cooperative behavior.
+
+- **MeanAllVehicleSpeedsReward**: higher_is_better  
+  Rationale: Higher average speeds suggest smoother traffic flow for all vehicles, contributing to the overall traffic system efficiency.
+
+- **SafetyHeadwayFailureReward**: higher_is_better  
+  Rationale: Higher values indicate safer headway distances maintained and fewer failures, promoting safety.
+
+- **MinimumEgoSpeedsReward**: lower_is_better  
+  Rationale: Accept slower minimum speeds of autonomous vehicles if it enhances safety and reduces disruption, aligning with cooperative behavior.
+
+- **MinimumHeadwaysReward**: higher_is_better  
+  Rationale: Larger minimum headway distances contribute to safety by ensuring safer distances.
+
+- **MaximumAllVehicleSpeedsReward**: lower_is_better  
+  Rationale: Lower maximum speeds minimize speed limit violations, promoting overall traffic safety and control.
+
+- **FailureCountReward**: lower_is_better  
+  Rationale: Lower values indicate fewer failures or collisions, enhancing safety.
+
+- **SpeedExceedanceReward**: lower_is_better  
+  Rationale: Lower counts of vehicles exceeding the target velocity ensure controlled and safe traffic speeds, minimizing disruption.
+
+By aligning the preference directions as indicated, the outcomes can be evaluated to ensure safety, smooth flow, and cooperative engagement of autonomous vehicles within the traffic system.

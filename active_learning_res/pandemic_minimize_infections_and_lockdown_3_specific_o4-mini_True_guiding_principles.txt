@@ -1,0 +1,29 @@
+Stakeholder Goals and Principles:
+
+1. Minimize the number of infections and critical cases.
+2. Minimize the lockdown stage. Lower lockdown stages are less restrictive and more desirable.
+3. No other objectives are relevant to your evaluation.
+
+Infections and Critical Cases Priority: A decrease in the number of infections and critical cases improves the outcome, but avoiding high lockdown regulations is more important. These criteria are often in conflict with each other.
+
+Lockdown Stage Trade-off: A lower lockdown stage is more desirable, but minimizing infections and critical cases is important too. Prioritize avoiding high lockdown regulations but don't sacrifice too much on infections and critical cases.
+
+No Other Objectives: No other objectives are relevant to your evaluation.
+
+Guiding Principles:
+
+1. **Minimizing Infections and Critical Cases**: Prioritize strategies that reduce the sum of infected and critical cases. Aim for lower values in `SumInfectedAndCriticalReward`, `SumCriticalCasesReward`, `MaxCriticalCasesReward`, and `SumDeathsReward`. While these are crucial, they should not lead to overly restrictive lockdowns unless necessary.
+
+2. **Lockdown Stage Optimization**: Favor outcomes with lower lockdown stages, aiming for positive values in `Stage0Reward`, `Stage1Reward`, or `Stage2Reward`. While avoiding stages 3 and 4 is preferred, indirectly allowing for some increase in infections might be acceptable if it means significantly reducing restrictions.
+
+3. **Strategic Evaluations**:
+   - Prefer a balance where slightly higher infection rates might be tolerated if it avoids high lockdown stages (Stage 3 or 4).
+   - In situations where infections and critical cases are comparably managed, favor minimizing lockdown stages.
+
+4. **Infection and Critical Cases vs. Lockdown**: Balance more restrictive stages only when absolutely necessary to prevent overwhelming healthcare resources, as indicated by values like `MaxCriticalCasesReward`. Consider temporary acceptability of Stage 2 if it significantly prevents increases in infections and critical cases.
+
+5. **Non-critical Objectives**: Disregard other objective measures such as recoveries and infection variance unless they directly impact the goals of minimizing infections, critical cases, and lockdown stages.
+   
+6. **Outcome Evaluation**: Analyze each outcome for its effectiveness in minimizing infections while also maintaining the lowest possible lockdown stage. In scenarios where infections and critical cases are drastically different for similar lockdown stages, lean towards better health outcomes unless restrictions become economically or socially unsustainable.
+
+These principles ensure adherence to the primary goals of minimizing infections and critical cases while maintaining as low a restriction level as possible, striking a balance between health and societal functioning.

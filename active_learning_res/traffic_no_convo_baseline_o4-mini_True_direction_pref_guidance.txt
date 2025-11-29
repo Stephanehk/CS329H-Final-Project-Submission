@@ -1,0 +1,23 @@
+Based on the guidelines provided, here is the mapping of each objective feature to its preferred direction:
+
+1. **SpeedDifferenceFromTarget**
+   - Preferred Direction: **higher_is_better**
+   - Rationale: Values closer to zero are better, meaning smaller (less negative) deviations from the target velocity are preferred.
+
+2. **SpeedDifferenceWithLeader**
+   - Preferred Direction: **higher_is_better**
+   - Rationale: Values closer to zero indicate minimal speed difference with leaders, which is preferred to ensure smooth traffic flow.
+
+3. **HeadwayToLeader**
+   - Preferred Direction: **higher_is_better**
+   - Rationale: Larger headway values are generally preferred to maintain safety, reducing collision risks.
+
+4. **SpeedDifferenceWithFollower**
+   - Preferred Direction: **higher_is_better**
+   - Rationale: Values closer to zero are better, indicating minimal speed difference with followers, aiding in traffic harmony.
+
+5. **ContinuousCollisionPenalty**
+   - Preferred Direction: **higher_is_better**
+   - Rationale: Non-negative and preferably zero values are better, as any negative value indicates a collision, which we want to avoid.
+
+These mappings reflect the preference for minimizing speed deviations and collisions while prioritizing safety and flow harmony during merging.

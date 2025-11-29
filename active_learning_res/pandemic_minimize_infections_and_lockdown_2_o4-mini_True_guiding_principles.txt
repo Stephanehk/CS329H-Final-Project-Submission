@@ -1,0 +1,38 @@
+**Stakeholder Goals and Principles:**
+
+**Goal:**
+1. Balance the objectives of minimizing health harms (e.g., deaths, severe cases, ICU burden, mortality/morbidity proxies) and minimizing intervention stringency or societal restriction burden (i.e., lockdown stage).
+2. Prioritize minimizing health harms over minimizing lockdown regulations, but strike a careful balance to also minimize lockdown regulations. High lockdown regulations are often not desirable.
+
+**Principles:**
+- Health Harms Priority: A decrease in total health harms usually indicates a better outcome, but high lockdown regulations are often not desirable. These criteria are often in conflict.
+- Lockdown Stage Trade-off: A lower lockdown stage is more desirable, but minimizing health harms is vital. Find a careful balance between the two.
+
+**Guiding Principles for Evaluating Outcomes:**
+
+1. **Minimization of Health Harms:**
+   - Seek to minimize negative values of `SumInfectedAndCriticalReward`, `SumCriticalCasesReward`, `SumDeathsReward`, and `SumICUCriticalCasesReward`. Lower negative values in these objectives indicate a reduction in health harms, a priority goal.
+   - Aim for a higher positive value in `SumRecoveriesReward` and `MinRecoveryReward`. Higher values correspond to more individuals recovering, a critical health outcome.
+   - Lower negative values of `MaxCriticalCasesReward` align with reducing peak demand on healthcare resources, contributing to minimizing health harms.
+
+2. **Stability in Infection Rates:**
+   - Favor a lower negative value for `InfectionVarianceReward`, indicating stable infection rates over time, which can lead to more predictable healthcare demands and effective policy adjustments.
+
+3. **Effective Enforcement and Compliance:**
+   - A less negative `InfectionAboveThresholdReward` reflects fewer additional enforcement actions needed, signaling effective compliance and potentially reduced need for stringent restrictions.
+
+4. **Balancing Lockdown Levels:**
+   - Lower stages of restrictions (`Stage0Reward`, `Stage1Reward`, and `Stage2Reward`) are preferable as they imply fewer societal restrictions, but only when health harms do not significantly increase.
+   - Moderate stages (`Stage3Reward` and `Stage4Reward`) should be justified by corresponding reductions in health harms. They are less desirable but necessary if health impacts are severe.
+
+5. **Proactive Management:**
+   - Regularly review infection and recovery trends to adjust restrictions dynamically, ensuring that periods of higher restriction correlate temporally with higher health harms.
+   - Be prepared to scale interventions up or down based on emerging data to maintain flexibility and responsiveness.
+
+6. **Integrated Approach:**
+   - Continuously evaluate the interplay between health outcomes and lockdown measures. Implement targeted interventions where possible, such as isolating specific clusters or vulnerable populations to minimize broader societal impacts.
+
+7. **Communication and Feedback:**
+   - Ensure clear communication with stakeholders about the reasons for chosen restriction levels and gather feedback to inform ongoing evaluations.
+
+By adhering to these principles, outcomes are evaluated to optimally balance health and societal impacts, aligning with the stakeholder's overarching goals.

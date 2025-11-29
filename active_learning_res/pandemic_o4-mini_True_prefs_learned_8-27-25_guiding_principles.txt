@@ -1,0 +1,25 @@
+To evaluate outcomes for choosing the level of lockdown restrictions during the COVID-19 pandemic in a synthetic environment, it is crucial to balance public health and economic factors. Below are guiding principles based on the objectives provided:
+
+1. **Minimize Health Impact:**
+   - Aim for lower values of "SumInfectedAndCriticalReward," "SumCriticalCasesReward," "SumDeathsReward," "MaxCriticalCasesReward," and "SumICUCriticalCasesReward." These objectives reflect the severity and capacity strain of the pandemic, and lower values indicate reduced health impacts and strain on healthcare resources.
+   - Prefer lower "InfectionVarianceReward" to encourage stability in infection rates, which can help in better planning and response to healthcare needs.
+
+2. **Support Healthcare Recovery and Efficiency:**
+   - Higher values in "SumRecoveriesReward" and "MinRecoveryReward" are desirable as they indicate better recovery outcomes and efficient healthcare interventions.
+
+3. **Ensure Compliance and Manage Resources Wisely:**
+   - Lower values for "InfectionAboveThresholdReward" are preferable as they suggest less need for enforcement actions, highlighting effective compliance with health measures and reduced resource strain.
+
+4. **Handle Peak Burden Effectively:**
+   - Favor lower values for "MaxCriticalCasesReward" to reduce peak demands on healthcare systems and avoid overwhelming medical facilities, especially ICU units.
+
+5. **Adapt Restriction Levels Appropriately:**
+   - Choose restriction stages that reflect the current severity of the situation:
+     - Prefer stages like "Stage0Reward" or "Stage1Reward" when health metrics are favorable, to balance disease control with economic and psychological benefits of fewer restrictions.
+     - Opt for "Stage3Reward" or "Stage4Reward" during critical periods as necessary to mitigate spikes in severe health outcomes.
+     - "Stage2Reward" can serve as a transitional measure when moving between lighter and stricter restrictions.
+   
+6. **Balance Stability with Flexibility:**
+   - Always weigh the benefits of reduced infections against the potential side effects of restrictive measures, such as economic downturns or public fatigue. Evaluate outcomes comprehensively to ensure the chosen measures support both public health and broader societal well-being.
+
+These principles provide a framework to evaluate outcomes, emphasizing a reduction in severe health impacts while maintaining recovery and compliance, balanced with appropriate lockdown levels.

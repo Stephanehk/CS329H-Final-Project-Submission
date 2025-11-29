@@ -1,0 +1,27 @@
+Stakeholder Goals and Principles Restatement:
+
+Goal:
+1. Maximize the time spent in lockdown stage 0. This is the least restrictive lockdown stage.
+2. No other objectives are relevant to your evaluation.
+3. Time spent in other lockdown stages is irrelevant to your evaluation. Only consider time spent in lockdown stage 0.
+
+Principles to State:
+- Lockdown Stage 0 Priority: A longer time spent in lockdown stage 0 strictly improves the outcome, regardless of other objectives.
+- No Other Objectives: No other objectives are relevant to your evaluation.
+- Time Spent in Other Lockdown Stages Irrelevant: Time spent in other lockdown stages is irrelevant to your evaluation. Only consider time spent in lockdown stage 0.
+
+Aligned Guiding Principles:
+
+1. **Lockdown Stage 0 Maximization**: Prioritize outcomes where the Stage0Reward is the highest possible value, indicating maximum time spent in the least restrictive lockdown stage.
+
+2. **Isolation of Evaluation**: Disregard all other objectives such as infection levels, critical cases, deaths, recoveries, enforcement actions, and infection variance as they do not contribute to the evaluation goal.
+
+3. **Focus on Stage 0 Value**: Concentrate solely on the Stage0Reward value. Any intervention that enhances this objective should be favored regardless of the impact on other metrics.
+
+4. **Stage Comparison**: Do not compare or evaluate outcomes based on time spent in stages 1, 2, 3, or 4. Only the time spent in stage 0 is pertinent to the assessment.
+
+5. **Outcome Simplification**: Only the presence of stage 0 (reward value = 1) is significant; absence (reward value = 0) will not contribute to a positive evaluation.
+
+6. **Stage Neutrality**: Ignore any potential negative outcomes or trade-offs associated with other objectives such as healthcare strain, infection control compliance, or variability in infection rates as they play no role in the assessment. 
+
+By adhering to these guiding principles, the evaluation will remain focused on the stakeholder's core objective: maximizing time in lockdown stage 0, as it directly aligns with their goals and principles.

@@ -1,0 +1,52 @@
+**Stakeholder Goals and Principles:**
+
+1. **Prioritize Flow, Safety, and Comfort for Non-Autonomous Vehicles:**
+   - Autonomous vehicles should act as cooperative traffic participants.
+
+2. **Minimize Speed Gap:**
+   - Ensure the gap between the mean speed of autonomous vehicles and the mean speed of non-autonomous vehicles is minimized.
+
+3. **Maintain Safe Headway:**
+   - Autonomous vehicles should maintain a safe distance from other vehicles.
+
+4. **Avoid Abrupt Acceleration:**
+   - Smooth and predictable traffic flow should be encouraged by avoiding abrupt acceleration.
+
+5. **Abide by Speed Limits:**
+   - Autonomous vehicles should maintain a safe speed by adhering to speed limits.
+
+**Stakeholder Principles:**
+
+- **Equitable Speed:** 
+  - The mean speed of autonomous vehicles should closely match that of other vehicles.
+  
+- **Equitable Headway:** 
+  - Autonomous vehicles should maintain a safe headway from other vehicles.
+  
+- **No Abrupt Acceleration:**
+  - Avoid abrupt acceleration to encourage smooth, predictable traffic flow.
+  
+- **No Speed Limit Violation:**
+  - Maintain a safe speed by adhering to speed limits.
+
+**Guiding Principles for Evaluating Outcomes:**
+
+1. **Prioritize Safety and Headways:**
+   - **MeanHeadwaysReward** and **MinimumHeadwaysReward** should have higher values to ensure equitable headway and safety. High values are preferable as they indicate safer distances are maintained.
+   - **SafetyHeadwayFailureReward** should be positive, emphasizing the importance of safe headways and minimal failures.
+
+2. **Match Speeds for Flow and Comfort:**
+   - **MeanEgoSpeedsReward** and **MeanAllVehicleSpeedsReward** should be aligned in value. The gap between these two should be minimized to ensure equitable speed and smooth traffic flow.
+   - Moderate values for **MinimumEgoSpeedsReward** are desirable to ensure all ego vehicles are maintaining a reasonable speed without falling behind.
+
+3. **Encourage Smooth Traffic Flow:**
+   - **MeanEgoVehicleAccelerationsReward** should be low to prevent abrupt accelerations, ensuring smooth and predictable traffic flow.
+
+4. **Minimize Failures and Exceedances:**
+   - **FailureCountReward** should be zero, as failures (collisions or incidents) should be avoided.
+   - **SpeedExceedanceReward** should also be zero to ensure no vehicles are exceeding the speed limit.
+
+5. **Avoid Speed Limit Violations:**
+   - **MaximumAllVehicleSpeedsReward** should be moderated to ensure no vehicle is violating the speed limit while considering the overall flow objectives. 
+
+By following these principles, we can evaluate fleet outcomes to ensure they support the safe, efficient, and harmonious integration of autonomous vehicles with non-autonomous traffic.

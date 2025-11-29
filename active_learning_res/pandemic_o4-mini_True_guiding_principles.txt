@@ -1,0 +1,29 @@
+**Guiding Principles for Evaluating Lockdown Restriction Outcomes:**
+
+1. **Minimize Infection and Critical Cases:**
+   - Aim for lower or more negative values in "SumInfectedAndCriticalReward" and "InfectionVarianceReward" to reduce overall infections and stabilize infection rates.
+   - Prioritize decreasing "MaxCriticalCasesReward" as it reflects peak healthcare demand, preventing hospital overcapacity.
+
+2. **Reduce Healthcare System Strain:**
+   - Lower or more negative "SumCriticalCasesReward" and "SumICUCriticalCasesReward" are desirable as they indicate reduced strain on healthcare facilities.
+   - Monitor "SumDeathsReward" and aim for greater or less negative values to reduce mortality rates and support improved health outcomes.
+
+3. **Maximize Recoveries:**
+   - A more positive "SumRecoveriesReward" signifies more people recovering, thus indicating successful healthcare intervention.
+   - Increase "MinRecoveryReward" to ensure consistent and widespread recovery across the population.
+
+4. **Balance Restriction Stages:**
+   - Use Stage Rewards ("Stage0" to "Stage4") to achieve an effective balance between health measures and normalcy. Lower restriction stages (0 to 2) should be preferred when healthcare strain is low and infection rates stabilize.
+   - Consider higher stages (3 and 4) when significant reductions in "SumDeathsReward" and "SumCriticalCasesReward" are required for safety, assuming other measures cannot achieve desired results.
+
+5. **Manage Compliance Needs:**
+   - Strive for a less negative "InfectionAboveThresholdReward" to diminish the necessity for frequent enforcement actions, thus increasing voluntary compliance and community trust.
+
+6. **Stability in Infection Trends:**
+   - A less negative "InfectionVarianceReward" is favorable as it indicates stable infection trends, allowing for predictability and adaptability in policy responses.
+
+7. **Holistic Evaluation:**
+   - Consider the interplay and trade-offs between reducing immediate healthcare system strain and long-term social and economic impacts of restrictions.
+   - Seek a comprehensive approach where health, social, and economic objectives are aligned, ensuring that any chosen restriction level maximizes overall societal benefit.
+
+By adhering to these guiding principles, the evaluation of outcomes can more effectively reflect the multifaceted nature of public health policies during a pandemic and support balanced decision-making.

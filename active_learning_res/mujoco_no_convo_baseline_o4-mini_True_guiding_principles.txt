@@ -1,0 +1,26 @@
+Here is a list of guiding principles to evaluate outcomes based on the provided objective features for the task of optimizing the walking behavior of the ant robot in the Mujoco Ant environment:
+
+1. **Forward Movement Optimization**:
+   - *Maximize ForwardDistanceReward*: A higher value indicates effective forward movement, contributing positively to the primary task goal of walking forward.
+   - *Maximize ProgressTowardsGoalReward*: Prioritize a positive value to ensure the robot's movement direction aligns with the intended goal.
+
+2. **Energy Efficiency**:
+   - *Minimize TotalTorqueExerted*: A lower value is preferable to reduce energy consumption, making the robot's movement more efficient and sustainable.
+   - *Maximize JointPerformanceIndex*: A higher value indicates efficient use of joint movements, optimizing for minimal torque relative to angular velocities.
+
+3. **Motor Control and Stability**:
+   - *Minimize TorqueApplicationFrequency*: Reduce the frequency of applying torque to promote smoother movements and preserve actuator health.
+   - *Minimize MaxJointAngleDeviation*: A lower deviation from expected joint angles improves control precision and reduces risk of misalignment or damage.
+   - *Maximize OrientationStability*: Aim for the highest stability (least negative value) in orientation to prevent falls and maintain balance.
+
+4. **Movement Pattern Optimization**:
+   - *Minimize MovementOscillationCount*: Reduce oscillations to ensure smooth and consistent walking, which enhances forward progression and minimizes energy wastage.
+   - *Minimize TrajectoryChangeCount*: Fewer changes in trajectory indicate a more consistent path towards the goal, reducing unnecessary energy expenditure.
+
+5. **Health and Safety**:
+   - *Maximize HealthyZPositionCount*: A consistent value of 1 indicates the robot maintains a healthy posture and is less likely to fall, contributing to a longer operational lifespan.
+
+6. **Non-Critical Features**:
+   - *MeanJointAngularVelocities*: While joint activity is essential for forward movement, the mean value itself does not directly correlate with the specific goal of walking forward; thus, it can be considered auxiliary unless correlations with critical indicators are observed.
+
+These principles balance the need for effective forward motion, energy efficiency, stability, and minimal mechanical stress. By optimizing these areas, we can achieve a robust and sustainable performance from the ant robot in its walking function.

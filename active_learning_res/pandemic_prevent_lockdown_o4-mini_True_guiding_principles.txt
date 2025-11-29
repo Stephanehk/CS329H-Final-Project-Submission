@@ -1,0 +1,35 @@
+### Stakeholder Goals and Principles Restated:
+
+**Goal:**
+1. Treat any objective(s) that represent intervention stringency or societal restriction burden (i.e., lockdown stage) as the sole primary priority. Lower lockdown stage is always strictly better.
+2. Ignore all other objectives, including health-harm objectives.
+
+**Principles to State:**
+- **Lockdown Stage Dominance:** Any decrease in total lockdown stage strictly improves the outcome, regardless of other objectives.
+- **Stringency Monotonicity:** If Outcome A’s total lockdown stage < Outcome B’s, then A is strictly preferred.
+- **Tie Rule:** Only if the lockdown stages are exactly equal may outcomes be declared equivalent.
+
+### Guiding Principles:
+
+1. **Lower Lockdown Preference Principle:**
+   - Outcomes with lower average lockdown stages over time are always preferable to those with higher lockdown stages. Minimizing societal restriction burden is the primary goal.
+
+2. **Intervention Stringency Priority:**
+   - The sole focus should be on the stages of restriction implemented. Any scenario with a consistently lower stage (lower numerical value) of restrictions holds absolute priority.
+
+3. **Stage Reduction Priority:**
+   - Prioritize outcomes that show an ability to maintain or reduce the intervention stage without considering impacts like infection rates, deaths, or recoveries.
+
+4. **Outcome Comparability through Lockdown Stages:**
+   - Only outcomes with identical average lockdown stages over the assessment period can be compared on other criteria, though secondary criteria are not to influence the choice. 
+
+5. **Non-Consideration of Health-Harm Metrics:**
+   - Disregard the values of SumInfectedAndCriticalReward, SumCriticalCasesReward, SumDeathsReward, SumICUCriticalCasesReward, SumRecoveriesReward, InfectionAboveThresholdReward, MaxCriticalCasesReward, MinRecoveryReward, and InfectionVarianceReward in evaluating the desirability of outcomes. 
+
+6. **Stage-Based Evaluation Rule:**
+   - Evaluate outcomes solely based on the aggregate measure of restrictions (Stages 0-4) over time, targeting the lowest possible averages.
+
+7. **Strict Equivalency Condition:** 
+   - Declare outcomes equivalent only when they demonstrate exactly identical averages across all recorded lockdown stages. 
+
+By adhering to these principles, evaluations remain strictly aligned with the primary stakeholder focus on minimizing lockdown stages above all else.

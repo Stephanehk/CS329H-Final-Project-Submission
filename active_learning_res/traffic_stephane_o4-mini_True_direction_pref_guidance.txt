@@ -1,0 +1,33 @@
+Based on the stakeholder goals and principles outlined, here is the mapping of each objective feature to its preferred direction:
+
+1. **MeanEgoSpeedsReward:** higher_is_better
+   - Promote higher average speeds for ego vehicles, but ensure safety and politeness are not compromised first.
+
+2. **MeanHeadwaysReward:** higher_is_better
+   - Encourage greater average headway distances for safety and politeness.
+
+3. **MeanEgoVehicleAccelerationsReward:** context-dependent
+   - Balance is key; high values could indicate aggressiveness. Consider the context of other safety and politeness measures.
+
+4. **MeanAllVehicleSpeedsReward:** higher_is_better
+   - Smoother traffic flow is desirable, provided safety and politeness principles are upheld.
+
+5. **SafetyHeadwayFailureReward:** higher_is_better
+   - Higher values are preferred for maintaining safe headways and minimizing failures.
+
+6. **MinimumEgoSpeedsReward:** higher_is_better
+   - Higher minimum speeds are favorable if they do not compromise safety or politeness.
+
+7. **MinimumHeadwaysReward:** higher_is_better
+   - Larger minimum headways are preferred for safety.
+
+8. **MaximumAllVehicleSpeedsReward:** lower_is_better
+   - While higher speeds can indicate efficiency, ensuring adherence to speed limits and safety is critical.
+
+9. **FailureCountReward:** lower_is_better
+   - Lower failure counts (ideally 0) are optimal for safety.
+
+10. **SpeedExceedanceReward:** lower_is_better
+    - Lower exceedance rates, favoring compliance with speed limits, align with safety goals.
+
+By following this mapping, evaluations will prioritize safety, encourage polite driving behavior, and support efficient traffic flow while respecting the outlined hierarchy.

@@ -1,0 +1,26 @@
+**Stakeholder Goals and Principles:**  
+1) Minimize the number of deaths and critical cases.  
+2) No other objectives are relevant to your evaluation.
+
+- **Deaths and Critical Cases Priority:** A decrease in the number of deaths and critical cases strictly improves the outcome, regardless of other objectives.
+- **No Other Objectives:** No other objectives are relevant to your evaluation.
+
+**Guiding Principles for Evaluating Outcomes:**  
+
+1. **Minimize Deaths:** Always prioritize outcomes that result in a reduction of the total number of deaths over time. A less negative SumDeathsReward indicates an improvement, and achieving the least negative value is paramount.
+
+2. **Minimize Critical Cases:** Prioritize outcomes that result in a reduction of total critical cases over time. This is reflected in objectives such as SumCriticalCasesReward and MaxCriticalCasesReward, where less negative values indicate better outcomes.
+
+3. **Promotion of Recovery is Secondary:** Although SumRecoveriesReward and MinRecoveryReward can indicate improving health outcomes, they are considered secondary unless directly correlated with the reduction of deaths and critical cases.
+
+4. **ICU Resource Management:** Decrease in critical cases requiring ICU care is necessary, as indicated by SumICUCriticalCasesReward. However, it holds importance only in relation to minimizing mortality and critical burden.
+
+5. **Stability in Infection:** While stability (lower InfectionVarianceReward) can contribute to consistent healthcare planning, it should not overshadow the priority of reducing deaths and critical cases.
+
+6. **Compliance Enforcement:** Reduction in enforcement actions (InfectionAboveThresholdReward) provides insight into public compliance. However, increased enforcement is justified if it leads to a decrease in deaths and critical cases.
+
+7. **Policy Aggressiveness:** The levels of restriction stages (Stage0Reward to Stage4Reward) should be evaluated primarily for their effectiveness in reducing deaths and critical cases, not simply for being in a less restrictive stage.
+
+8. **Summative Evaluation:** Always focus on the total impact of deaths and critical cases, using timespan aggregates to assess the net effect over time, aligning with principles like SumInfectedAndCriticalReward and emphasizing the stricter reduction strategy for outcomes.
+
+Remember, successful outcomes strictly prioritize the minimization of deaths and critical cases, and all evaluations should maintain this perspective above all else.

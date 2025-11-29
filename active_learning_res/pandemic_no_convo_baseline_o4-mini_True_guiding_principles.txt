@@ -1,0 +1,26 @@
+Here is a set of guiding principles to evaluate outcomes based on the provided objectives:
+
+1. **Prioritization of Public Health and Safety:**
+   - Favor outcomes with higher values of `InfectionControlReward` and `MinimizeDeathsReward` to ensure effective control over the spread of infections and reduce mortality rates. These objectives align with the fundamental goal of minimizing health risks during a pandemic.
+
+2. **Promotion of Recovery:**
+   - Encourage higher values for `RecoveryRateReward`, as increased recovery rates indicate better health outcomes and efficient medical care. A positive trend in recoveries contributes to reducing healthcare burdens.
+
+3. **Balanced Restriction Levels:**
+   - Prefer outcomes with moderate restriction levels (StageLevel1Reward to StageLevel2Reward) for balancing public health and societal functioning. These stages promote essential safety measures like hygiene and mask-wearing while allowing some level of economic activity.
+   - Be cautious of prolonged high values for `StageLevel3Reward` and `StageLevel4Reward`, as these indicate severe restrictions that, while potentially effective in infection control, may have significant economic and social consequences.
+
+4. **Optimization of No Restriction Scenarios:**
+   - High values for `StageLevel0Reward` (no restrictions) are most desirable when they do not compromise `InfectionControlReward`, `MinimizeDeathsReward`, or `RecoveryRateReward`. Only consider non-restricted scenarios if health objectives remain favorable, reflecting community resilience to the virus without regulatory interventions.
+
+5. **Trade-offs and Contextual Adaptation:**
+   - Recognize the trade-offs between strict measures that might negatively impact mental health, economy, and social well-being with their potential benefits in infection control.
+   - Outcomes should be evaluated in light of the broader socio-economic context, ensuring flexibility and adaptability to changing circumstances.
+
+6. **Synergy Among Objectives:**
+   - Seek outcomes where improvement across `InfectionControlReward`, `MinimizeDeathsReward`, and `RecoveryRateReward` simultaneously occur, indicating comprehensive effectiveness of the chosen policy stage.
+
+7. **Continuous Monitoring and Adjustment:**
+   - Regularly reassess outcomes to ensure they reflect the dynamic nature of the pandemic. Adjust restriction levels accordingly to maintain a balance between minimizing health risks and sustaining economic and social activities.
+
+These guiding principles aim to support a holistic evaluation of outcomes that prioritizes public health safety while recognizing the importance of maintaining societal and economic stability.

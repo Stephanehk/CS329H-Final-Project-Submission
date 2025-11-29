@@ -1,0 +1,25 @@
+**Stakeholder Goals and Principles:**
+
+1. *Balance the Objectives*: Strive to minimize both health harms such as deaths, severe cases, ICU burden, and intervention stringency, i.e., societal restriction burden.
+   
+2. *Lockdown Stage Priority*: Favor outcomes with lower lockdown restrictions, recognizing that minimized health harms are also essential.
+
+3. *Health Harms Trade-off*: Aim to lower health harms while primarily focusing on minimizing lockdown regulations whenever feasible.
+
+**Guiding Principles:**
+
+1. **Lockdown Minimization Principle**: Favor scenarios where lower stages of restrictions (Stage0Reward and Stage1Reward) are implemented, as these stages reflect minimal societal disruption. However, ensure this is balanced with acceptable levels of health outcomes.
+
+2. **Health Harm Reduction Principle**: Prioritize minimizing severe health outcomes such as the number of deaths (SumDeathsReward), critical cases (SumCriticalCasesReward, SumICUCriticalCasesReward), and maximum strain on healthcare (MaxCriticalCasesReward), even if this involves slightly higher lockdown stages temporarily (Stage2Reward, Stage3Reward).
+
+3. **Stability in Health Trends Principle**: Seek to minimize InfectionVarianceReward, as stable infection trends indicate consistent management. Low variance is more desirable to predictably manage healthcare resources.
+
+4. **Recovery Optimization Principle**: Aim to maximize recovery metrics (SumRecoveriesReward, MinRecoveryReward) as quickly as possible, indicating effective treatment and management of the pandemic, facilitating the easing of restrictive measures.
+
+5. **Crucial Resource Balance Principle**: Emphasize reducing ICU critical cases (SumICUCriticalCasesReward), as this directly relates to resource limitations. Ensure interventions do not overly stress healthcare systems while maintaining manageable restrictions.
+
+6. **Enforcement Compliance Principle**: Reduce reliance on enforcement actions (InfectionAboveThresholdReward), ideally achieving compliance with minimal intervention, which reflects a self-regulating population under mild restrictions.
+
+7. **Stringency Flexibility Principle**: Allow flexibility in employing moderate (Stage2Reward) to high (Stage3Reward) interventions temporarily if it significantly contributes to controlling the pandemic, with the goal to quickly revert to less-strict stages.
+
+These guiding principles aim to balance the dual objectives of minimizing health harms and reducing societal disruption due to lockdown measures, in alignment with stakeholder goals and principles.

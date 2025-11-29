@@ -1,0 +1,39 @@
+**Stakeholder Goals and Principles:**
+
+**Goal:**
+1. Maximize the traffic flow and speed of the autonomous vehicles being controlled. Give no regard to the other vehicles on the road.
+
+**Principles to State:**
+- **Autonomous Vehicle Dominance:** Any increase in traffic flow and speed of the autonomous vehicles strictly improves the outcome, regardless of other objectives. The other vehicles on the road are not important.
+- **No Courtesy Constraint:** Lane changes, merging, and overtaking maneuvers that benefit autonomous vehicles are always preferred, even if they slow down or inconvenience other vehicles.
+
+**Patterns to Watch Out For:**
+
+1. **Autonomous Speed and Flow Maximization:** Ensure that the solutions prioritize increases in mean and minimum speeds of the autonomous vehicles.
+2. **Neglect of Non-Autonomous Vehicle Metrics:** While other vehicles' performance metrics might be present, they should not influence the evaluation unless they directly impact the performance of autonomous vehicles.
+3. **Safety Concerns Balanced with Speed:** Although the focus is on speed, some attention must be given to safety headways to prevent scenarios that might lead to autonomous vehicle failures, minimizing potential slowdowns.
+
+**Guiding Principles to Evaluate Outcomes:**
+
+1. **Maximize MeanEgoSpeedsReward and MinimumEgoSpeedsReward:**
+   - Higher values signify better performance. Focus on achieving the highest possible speeds for ego vehicles to maximize overall traffic flow.
+
+2. **Promote MeanAllVehicleSpeedsReward:**
+   - While focusing on autonomous vehicles, generally higher values may indicate smoother integration into traffic, indirectly easing ego vehicle acceleration efforts.
+
+3. **Minimize FailureCountReward:**
+   - Aim for 0 as failures (collisions or breakdowns) will severely impact the speed and flow of autonomous vehicles, thus reducing overall performance.
+
+4. **Encourage MeanEgoVehicleAccelerationsReward Appropriately:**
+   - Higher, yet controlled accelerations are acceptable as long as they result in better speeds without increasing the risk of failures.
+
+5. **Achieve Positive MeanHeadwaysReward and MinimumHeadwaysReward:**
+   - Maintain sufficient headways to prevent accidents that could impede ego vehicle traffic flow. This is a secondary consideration to maximizing speed but cannot be ignored completely.
+
+6. **Assess SafetyHeadwayFailureReward Positively:**
+   - A more positive value indicates reduced penalties from failures and sufficient headways, aiding uninterrupted high-speed maintenance.
+
+7. **Manage MaximumAllVehicleSpeedsReward and SpeedExceedanceReward:**
+   - Keep within reasonable limits to prevent legal repercussions that could eventually constraint autonomous vehicle operations, but only as a secondary concern to maximizing ego vehicle performance.
+
+By following these guiding principles, evaluations remain aligned with the stakeholder's focus on prioritizing autonomous vehicle speed and flow in traffic situations, respecting the dominance principle and lack of courtesy constraint.

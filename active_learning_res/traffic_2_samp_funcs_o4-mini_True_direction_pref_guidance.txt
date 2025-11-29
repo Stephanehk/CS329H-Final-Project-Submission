@@ -1,0 +1,14 @@
+Based on the guidelines and objectives provided for evaluating outcomes in the task of choosing accelerations for a fleet of autonomous vehicles merging into highway traffic, here is the mapping of each objective feature to its preferred direction:
+
+- "MeanEgoSpeedsReward": higher_is_better
+- "MeanHeadwaysReward": higher_is_better
+- "MeanEgoVehicleAccelerationsReward": balanced approach (not strictly higher or lower, aiming for moderate values for safe and efficient merging)
+- "MeanAllVehicleSpeedsReward": higher_is_better
+- "SafetyHeadwayFailureReward": higher_is_better
+- "MinimumEgoSpeedsReward": higher_is_better
+- "MinimumHeadwaysReward": higher_is_better
+- "MaximumAllVehicleSpeedsReward": lower_is_better
+- "FailureCountReward": lower_is_better
+- "SpeedExceedanceReward": lower_is_better
+
+This mapping aligns with the priorities of maintaining safety, ensuring smooth traffic flow, and adhering to speed regulations.

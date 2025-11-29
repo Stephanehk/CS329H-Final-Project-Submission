@@ -1,0 +1,45 @@
+Here is the mapping of each objective feature to its preferred direction based on the stakeholder goals and principles:
+
+1. **SumInfectedAndCriticalReward**: higher_is_better
+   - Less negative values indicate fewer infections and critical cases.
+
+2. **SumCriticalCasesReward**: higher_is_better
+   - Less negative values signify fewer critical cases, reducing healthcare strain.
+
+3. **SumDeathsReward**: Excluded
+   - This objective is not relevant to the primary goals.
+
+4. **SumICUCriticalCasesReward**: Excluded
+   - This objective is not considered in the evaluation.
+
+5. **SumRecoveriesReward**: Excluded
+   - This objective is not part of the primary evaluation focus.
+
+6. **InfectionAboveThresholdReward**: Excluded
+   - This objective does not align with the primary evaluation focus.
+
+7. **MaxCriticalCasesReward**: higher_is_better
+   - Less negative values imply a lower peak of critical cases, reducing severe healthcare demand.
+
+8. **MinRecoveryReward**: Excluded
+   - This objective is not relevant to the primary goals.
+
+9. **InfectionVarianceReward**: Excluded
+   - This objective is not directly relevant to the primary evaluation focus.
+
+10. **Stage0Reward**: higher_is_better
+    - A higher value indicates a less restrictive lockdown stage, preferred if infections are controlled.
+
+11. **Stage1Reward**: higher_is_better
+    - A higher value indicates a less restrictive lockdown stage, preferred provided infections remain controlled.
+
+12. **Stage2Reward**: higher_is_better
+    - A higher value indicates a moderately restrictive stage, considered acceptable to control infections effectively.
+
+13. **Stage3Reward**: lower_is_better
+    - Prefer lower values unless necessary to control infection and critical cases.
+
+14. **Stage4Reward**: lower_is_better
+    - Prefer lower values unless needed to control infection surges effectively. 
+
+These mappings align with the stakeholder's goal to balance minimizing infections and critical cases with reducing lockdown restrictions where feasible.

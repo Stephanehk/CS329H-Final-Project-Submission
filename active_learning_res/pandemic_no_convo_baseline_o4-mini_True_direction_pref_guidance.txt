@@ -1,0 +1,10 @@
+Based on the provided guiding principles, here's a mapping of each objective feature to its preferred direction:
+
+- **InfectionControlReward**: higher_is_better
+- **MinimizeDeathsReward**: higher_is_better
+- **RecoveryRateReward**: higher_is_better
+- **StageLevel0Reward**: higher_is_better, but only when health objectives (InfectionControl, MinimizeDeaths, RecoveryRate) remain favorable.
+- **StageLevel1Reward**: higher_is_better, as moderate restrictions help in balancing safety and economic activity.
+- **StageLevel2Reward**: higher_is_better, since it maintains necessary safety measures with manageable restrictions.
+- **StageLevel3Reward**: lower_is_better, as prolonged severe restrictions may have significant socio-economic consequences unless absolutely necessary.
+- **StageLevel4Reward**: lower_is_better, as the most severe restrictions are generally undesirable unless required to control severe outbreaks.

@@ -1,0 +1,21 @@
+Here is the mapping of each objective feature to its preferred direction:
+
+1. **MeanEgoSpeedsReward**: higher_is_better (Maximizing speeds within safe and legal limits aids in efficient traffic flow.)
+
+2. **MeanHeadwaysReward**: higher_is_better (Maximizing headway distances ensures safety by maintaining appropriate distances between vehicles.)
+
+3. **MeanEgoVehicleAccelerationsReward**: higher_is_better (Moderate positive acceleration values can be beneficial for responsive merging, but should not lead to aggressive driving.)
+
+4. **MeanAllVehicleSpeedsReward**: higher_is_better (Higher average speeds among all vehicles indicate smoother and more efficient traffic flow.)
+
+5. **SafetyHeadwayFailureReward**: higher_is_better (Maximizing this reward emphasizes maintaining safe headway distances and minimizing failures.)
+
+6. **MinimumEgoSpeedsReward**: higher_is_better (Higher minimum speeds prevent lagging vehicles that might disrupt traffic flow.)
+
+7. **MinimumHeadwaysReward**: higher_is_better (Maximizing the minimum headway helps ensure the safest possible distance is maintained, reducing collision risks.)
+
+8. **MaximumAllVehicleSpeedsReward**: lower_is_better (Lower values help prevent speed violations and ensure safer conditions.)
+
+9. **FailureCountReward**: lower_is_better (Ideally zero, any non-zero value indicates a failure or collision, which must be minimized.)
+
+10. **SpeedExceedanceReward**: lower_is_better (A lower value ensures compliance with speed limits, promoting adherence to traffic regulations.)

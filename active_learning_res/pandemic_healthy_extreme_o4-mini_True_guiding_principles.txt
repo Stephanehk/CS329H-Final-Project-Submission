@@ -1,0 +1,36 @@
+Stakeholder Goals and Principles:
+1. Treat any objective(s) that represent health harms (e.g., deaths, severe cases, ICU burden, mortality/morbidity proxies) as the sole primary priority. Lower total health harm is always strictly better.
+2. Ignore all other objectives (e.g., intervention side-effects such as societal/economic burden or policy stringency).
+
+Principles to State:
+- Health Dominance: Any decrease in total health harm strictly improves the outcome, regardless of other objectives.
+- Health Monotonicity: If Outcome A’s total health harm ≤ Outcome B’s, with at least one strict decrease, then A is strictly preferred.
+- Tie Rule: Only if total health harm is exactly equal may outcomes be declared equivalent.
+
+Guiding Principles for Evaluating Outcomes:
+
+1. **Minimize Total Infections and Critical Cases**: 
+   - Prefer outcomes with higher (less negative) values for `SumInfectedAndCriticalReward`. This indicates fewer infections and critical cases over time, reducing health harm.
+
+2. **Lower Critical Cases**:
+   - Prefer outcomes with higher (less negative) values for `SumCriticalCasesReward` and `SumICUCriticalCasesReward`. These indicate fewer critical cases and ICU needs, respectively, aligning with the goal to minimize healthcare system strain.
+
+3. **Reduce Mortality**:
+   - Prioritize outcomes with higher (less negative) values for `SumDeathsReward`. This ensures fewer deaths, adhering to the primary goal of reducing health harm.
+
+4. **Enhance Recovery**:
+   - Favor outcomes with higher values for `SumRecoveriesReward` and `MinRecoveryReward`. Increased recoveries indicate better management of the pandemic and improved health outcomes.
+
+5. **Manage Infection Peaks**:
+   - Prefer outcomes with higher (less negative) values for `MaxCriticalCasesReward`. Lower peak critical cases help mitigate bursts in healthcare demand, aligning with reducing health impacts.
+
+6. **Stabilize Infection Trends**:
+   - Choose outcomes with higher (less negative) values for `InfectionVarianceReward`. Lower variance suggests more stable infection control, contributing to reduced health harm.
+
+7. **Facilitate Compliance and Reduce Enforcement Needs**:
+   - Favor outcomes with higher (less negative) values for `InfectionAboveThresholdReward`. This indicates effective management of infection rates without excessive enforcement actions.
+
+8. **Policy Stringency and Stage Considerations**:
+   - While policy stages from `Stage0Reward` to `Stage4Reward` provide context, prioritize the lowest total health harm above these considerations. The resulting stage should naturally align with achieving the lowest health harm, independent of stage-specific rewards.
+
+In all evaluations, prioritize any outcome that results in a decrease in total health harm according to the Health Dominance and Health Monotonicity principles. Only consider other objectives for differentiating outcomes that have equivalent total health harm per the Tie Rule.

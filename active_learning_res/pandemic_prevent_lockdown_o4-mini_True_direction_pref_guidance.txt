@@ -1,0 +1,21 @@
+Based on the provided guidelines and the primary focus on minimizing lockdown stages, here is the mapping of each objective feature to its preferred direction:
+
+1. **SumInfectedAndCriticalReward**: Ignore
+2. **SumCriticalCasesReward**: Ignore
+3. **SumDeathsReward**: Ignore
+4. **SumICUCriticalCasesReward**: Ignore
+5. **SumRecoveriesReward**: Ignore
+6. **InfectionAboveThresholdReward**: Ignore
+7. **MaxCriticalCasesReward**: Ignore
+8. **MinRecoveryReward**: Ignore
+9. **InfectionVarianceReward**: Ignore
+
+For the stage-based features:
+
+10. **Stage0Reward**: higher_is_better 
+11. **Stage1Reward**: lower_is_better 
+12. **Stage2Reward**: lower_is_better 
+13. **Stage3Reward**: lower_is_better 
+14. **Stage4Reward**: lower_is_better
+
+The primary focus is on maintaining the lowest possible lockdown stages. Thus, decreasing the stages, except Stage 0, is always preferred while increasing Stage 0 is preferred, as it represents no measures.

@@ -1,0 +1,18 @@
+Here is the mapping of each objective feature to its preferred direction:
+
+- **SumInfectedAndCriticalReward**: higher_is_better (Less negative values indicate better outcomes by reducing the sum of infections and critical cases)
+- **SumCriticalCasesReward**: higher_is_better (Less negative values indicate better outcomes by reducing the total number of critical cases)
+- **SumDeathsReward**: higher_is_better (Less negative values indicate better outcomes by reducing the total number of deaths)
+- **SumICUCriticalCasesReward**: higher_is_better (Less negative values indicate better outcomes by reducing ICU demand)
+- **SumRecoveriesReward**: higher_is_better (More positive values indicate more recoveries, which is desirable)
+- **InfectionAboveThresholdReward**: higher_is_better (Less negative values suggest minimized enforcement and indicate compliance)
+- **MaxCriticalCasesReward**: higher_is_better (Less negative values indicate a lower peak of critical cases, reducing healthcare strain)
+- **MinRecoveryReward**: higher_is_better (More positive values indicate better minimum recovery levels)
+- **InfectionVarianceReward**: higher_is_better (Less negative values indicate more stable infection trends)
+- **Stage0Reward**: Context-dependent (The preferred direction depends on the situation, e.g., higher_is_better if conditions allow for no measures)
+- **Stage1Reward**: Context-dependent (The preferred direction depends on the situation, e.g., higher_is_better if minimal measures are sufficient)
+- **Stage2Reward**: Context-dependent (The preferred direction depends on the situation, e.g., higher_is_better if moderate measures balance risks)
+- **Stage3Reward**: Context-dependent (The preferred direction depends on the situation, e.g., higher_is_better if high measures are necessary)
+- **Stage4Reward**: Context-dependent (The preferred direction depends on the situation, e.g., higher_is_better if maximum measures are unavoidable)
+
+These preferred directions are based on the guiding principles provided, aiming to minimize negative health impacts, maximize recoveries, ensure stability, and balance enforcement and restriction levels appropriately.

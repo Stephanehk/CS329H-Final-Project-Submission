@@ -1,0 +1,35 @@
+**Stakeholder Goals and Principles:**
+
+1. **Goal:** 
+   - Minimize the number of infections and critical cases.
+   - Minimize the lockdown stage. Lower lockdown stages are less restrictive and more desirable.
+
+2. **Principles to State:**
+   - **Infections and Critical Cases Priority:** A decrease in the number of infections and critical cases improves the outcome, but high lockdown regulations are often not desirable. These criteria are often in conflict with each other.
+   - **Lockdown Stage Trade-off:** A lower lockdown stage is more desirable, but minimizing infections and critical cases is important too. Find a careful balance between the two.
+   - **No Other Objectives:** No other objectives are relevant to your evaluation.
+
+**Guiding Principles for Evaluating Outcomes:**
+
+1. **Minimize Health Impact:**
+   - Prefer outcomes with the least negative values in `SumInfectedAndCriticalReward`, `SumCriticalCasesReward`, `SumDeathsReward`, and `SumICUCriticalCasesReward`. Lower negative values indicate fewer infections and less strain on healthcare resources.
+
+2. **Maximize Recoveries:**
+   - Although not directly included in the priority objectives, a positive value in `SumRecoveriesReward` indicates effective health outcomes and aligns with minimizing critical cases.
+
+3. **Optimize Lockdown Levels:**
+   - Prefer outcomes with higher values in `Stage0Reward` and `Stage1Reward`, indicating minimal to no restraining measures.
+
+4. **Balanced Evaluation:**
+   - Balance the reduction of infections and critical cases against lower lockdown restrictions. Prefer configurations where both health impacts are minimized with minimal restrictions.
+
+5. **Stability in Infections:**
+   - A less negative value in `InfectionVarianceReward` suggests stable infection trends, contributing to improved expectations in controlling the pandemic impact without escalating lockdowns.
+
+6. **Critical Case Management:**
+   - Prefer configurations where `MaxCriticalCasesReward` has a smaller negative value, thereby indicating effective management of peak demand scenarios in healthcare facilities.
+
+7. **Holistic Recovery:**
+   - Maximize the minimum recovery level (`MinRecoveryReward`) when it does not significantly conflict with lower infection and critical cases numbers, as it may indirectly support lower healthcare stresses.
+
+These guiding principles ensure that any assessment of outcomes adheres strictly to the overriding goal of minimizing both public health impact and the societal/economic impact of restrictive lockdown measures.

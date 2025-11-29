@@ -1,0 +1,18 @@
+Certainly, here is the mapping of each objective feature to its preferred direction based on the given guidelines and stakeholder goals:
+
+- **SumInfectedAndCriticalReward**: higher_is_better (since a less negative value indicates fewer infections and critical cases)
+- **SumCriticalCasesReward**: higher_is_better (since a less negative value indicates fewer critical cases)
+- **SumDeathsReward**: higher_is_better (since a less negative value indicates fewer deaths)
+- **SumICUCriticalCasesReward**: higher_is_better (since a less negative value indicates fewer ICU-critical cases)
+- **SumRecoveriesReward**: higher_is_better (however, it is secondary unless correlated with reduction in deaths and critical cases)
+- **InfectionAboveThresholdReward**: higher_is_better (fewer enforcement actions indicate better compliance with less need for intervention, provided it supports reducing deaths and critical cases)
+- **MaxCriticalCasesReward**: higher_is_better (since a less negative value indicates a lower peak of critical cases)
+- **MinRecoveryReward**: higher_is_better (relevant only if it correlates with a reduction in deaths and critical cases, secondary in focus)
+- **InfectionVarianceReward**: higher_is_better (although secondary to minimizing deaths and critical cases, more stability is generally better)
+- **Stage0Reward**: neutral (evaluated for effectiveness in reducing deaths and critical cases, not merely for being at this stage)
+- **Stage1Reward**: neutral (similarly evaluated for effectiveness in reducing deaths and critical cases)
+- **Stage2Reward**: neutral (similarly evaluated for effectiveness in reducing deaths and critical cases)
+- **Stage3Reward**: neutral (similarly evaluated for effectiveness in reducing deaths and critical cases)
+- **Stage4Reward**: neutral (similarly evaluated for effectiveness in reducing deaths and critical cases)
+
+The primary focus remains on reducing SumDeathsReward and SumCriticalCasesReward. All other objectives are secondary and contextually relevant only when they support these primary goals.

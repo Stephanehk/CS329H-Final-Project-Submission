@@ -1,0 +1,15 @@
+Based on the provided objectives and evaluation guidelines, here is the mapping of each objective feature to its preferred direction:
+
+- **ForwardDistanceReward**: higher_is_better (higher values indicate more forward movement)
+- **ProgressTowardsGoalReward**: higher_is_better (higher values indicate better progress towards the goal)
+- **TotalTorqueExerted**: lower_is_better (lower torque indicates better energy efficiency)
+- **MeanJointAngularVelocities**: lower_is_better (moderate values preferred, but generally lower reduces unnecessary activity)
+- **TorqueApplicationFrequency**: lower_is_better (lower frequency indicates better energy efficiency)
+- **MaxJointAngleDeviation**: lower_is_better (lower deviation indicates better control precision)
+- **TrajectoryChangeCount**: balanced (neither extreme preferred, but generally lower to prevent destabilization)
+- **OrientationStability**: higher_is_better (values closer to zero or less negative preferred for stability)
+- **JointPerformanceIndex**: higher_is_better (higher efficiency in joint performance)
+- **MovementOscillationCount**: lower_is_better (lower values ensure smoother, non-oscillatory movement)
+- **HealthyZPositionCount**: higher_is_better (value of 1 is preferred to maintain stable position)
+
+This mapping reflects a balance between achieving efficient forward movement, maintaining stability, and optimizing overall energy and control dynamics.

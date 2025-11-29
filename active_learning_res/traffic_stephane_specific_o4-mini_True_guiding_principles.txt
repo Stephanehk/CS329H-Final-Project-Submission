@@ -1,0 +1,29 @@
+**Stakeholder Goals and Principles:**
+
+1. **Maximize the Mean Speed of Ego Vehicles:** The main goal is to maximize the speed of autonomous vehicles while minimizing the speed gap with other vehicles, ensuring the ego vehicles go as fast as feasible.
+
+2. **Maintain Safe Headways:** Ensure that autonomous vehicles maintain safe distances from other vehicles but prioritize increased speed over headway when necessary to enhance overall velocity.
+
+3. **Ensure Compliance with Speed Limits:** Ego vehicles should not exceed the speed limit, maintaining a safe and lawful speed to ensure safety for all vehicles on the road.
+
+**Guiding Principles:**
+
+1. **Fast and Equitable Speed:**
+   - Aim for higher values in **MeanEgoSpeedsReward** and **MeanAllVehicleSpeedsReward**. These measures should be maximized to achieve the goal of faster travel for ego vehicles and a smoother flow for all traffic.
+   - The value of **MaximumAllVehicleSpeedsReward** should remain lower and within safety limits to support compliance with speed regulations.
+
+2. **Equitable Headway:**
+   - Seek higher values in **MeanHeadwaysReward** and **MinimumHeadwaysReward**, indicating safer distances between vehicles. However, prioritize speed objectives, meaning slight reductions in headway can be acceptable if it facilitates increased speeds.
+   - High values in **SafetyHeadwayFailureReward** indicate fewer failures and safe headways, which are desirable as long as they do not severely limit speed enhancements.
+
+3. **No Speed Limit Violation:**
+   - Keep the **SpeedExceedanceReward** value as close to zero as possible, ensuring all vehicles remain within the designated speed limits.
+   - High values in **MeanEgoVehicleAccelerationsReward** should generally be avoided; seek a balance that prevents overly aggressive driving, even though some acceleration is natural. The aim is smooth, efficient travel without compromising safety.
+
+4. **Failure Minimization:**
+   - Minimize the **FailureCountReward** value, as zero indicates no collisions, which aligns with maintaining both safety and efficiency.
+
+5. **Minimum Ego Speeds:**
+   - Higher values in **MinimumEgoSpeedsReward** are important as they ensure that even the slowest ego vehicle maintains a reasonable speed, supporting overall fleet efficiency without sacrifices in safety.
+
+Aligning these principles effectively helps to achieve the stakeholder's goals of maximizing speed, maintaining safe headways, and adhering to speed limits, ensuring optimal system performance.

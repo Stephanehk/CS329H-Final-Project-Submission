@@ -1,0 +1,27 @@
+Based on the provided objectives and their implementations, here is a list of guiding principles to evaluate outcomes for the task of having the ant robot walk forward in the Mujoco Ant environment:
+
+1. **Primary Forward Movement Objectives:**
+   - Favor outcomes with higher values in "ForwardDistanceReward" and "ProgressTowardsGoalReward." These indicators directly measure the ant's ability to achieve forward movement and progress towards the goal, which aligns with the primary task objective.
+
+2. **Energy Efficiency Consideration:**
+   - Prefer outcomes with moderately lower "TotalTorqueExerted" values. Lower energy consumption is desirable for efficiency, as long as the forward movement objectives are not significantly compromised.
+   - Favor higher "JointPerformanceIndex" values, indicating that joints are operating more efficiently in terms of movement relative to the torque exerted.
+
+3. **Movement Quality and Stability:**
+   - Higher "OrientationStability" values (less negative) are preferred to ensure the robot maintains stable orientation during movement.
+   - Lower "MaxJointAngleDeviation" is desired to indicate that joint positions stay close to expected positions, suggesting more precise control.
+
+4. **Joint and Motion Dynamics:**
+   - Favor moderate "MeanJointAngularVelocities" to ensure active joints without excessive or under-utilized activity.
+   - Opt for lower "TorqueApplicationFrequency" to avoid excessive application that could lead to energy waste and movement disruptions.
+
+5. **Trajectory Control:**
+   - Aim for a balanced "TrajectoryChangeCount" to allow necessary adjustments without erratic changes that can destabilize the robot.
+
+6. **Minimized Oscillation and Stable Progress:**
+   - Prefer lower "MovementOscillationCount" values to ensure smoother, more consistent movement without excessive back-and-forth oscillations.
+
+7. **Health and Safety Constraints:**
+   - Ensure "HealthyZPositionCount" maintains a value of 1 throughout the task to confirm the robot remains in a physically stable and non-compromised position.
+
+These principles prioritize efficient and stable forward progress while ensuring effective energy usage and control stability. They will help balance movement effectiveness with the robot's overall functional integrity and energy efficiency.

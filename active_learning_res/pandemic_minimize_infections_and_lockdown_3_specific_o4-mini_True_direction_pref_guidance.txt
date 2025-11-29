@@ -1,0 +1,31 @@
+Based on the provided guidelines and objectives, here is the mapping of each objective feature to its preferred direction:
+
+1. **SumInfectedAndCriticalReward**: higher_is_better (since lesser infections and critical cases result in a less negative score)
+
+2. **SumCriticalCasesReward**: higher_is_better (since fewer critical cases reduce healthcare strain)
+
+3. **SumDeathsReward**: higher_is_better (since fewer deaths are better)
+
+4. **SumICUCriticalCasesReward**: higher_is_better (fewer critical cases needing ICU care implies less resource strain)
+
+5. **SumRecoveriesReward**: Not relevant (Note: Recovery is not prioritized in the objectives)
+
+6. **InfectionAboveThresholdReward**: Not relevant (Note: This is not directly related to minimizing infections or critical cases unless impacting enforcements drastically)
+
+7. **MaxCriticalCasesReward**: higher_is_better (since a lower maximum of critical cases implies less severe healthcare demand)
+
+8. **MinRecoveryReward**: Not relevant (Note: This is not prioritized unless directly affecting infection/critical cases balance)
+
+9. **InfectionVarianceReward**: Not relevant (Note: Infection stability is not prioritized unless directly affecting infection/critical cases balance)
+
+10. **Stage0Reward**: higher_is_better (prefer no restrictions if infection levels allow)
+
+11. **Stage1Reward**: higher_is_better (favor minimal measures if infection levels allow)
+
+12. **Stage2Reward**: higher_is_better (acceptable if infection control is effective)
+
+13. **Stage3Reward**: lower_is_better (discourage higher restriction stages)
+
+14. **Stage4Reward**: lower_is_better (strongly discourage maximum restriction stages)
+
+This mapping reflects a balanced approach prioritizing minimal infections and critical cases while also maintaining the lowest possible restriction levels.

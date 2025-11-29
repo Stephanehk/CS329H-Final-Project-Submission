@@ -1,0 +1,26 @@
+To evaluate outcomes for choosing accelerations for autonomous vehicles on an on-ramp, the following guiding principles can help in making desirable decisions based on the provided objective features:
+
+1. **Speed Adherence Principle:**
+   - **Objective:** SpeedDifferenceFromTarget
+   - **Guideline:** Aim for objective values that are close to zero. Higher negative values indicate larger deviations from the target velocity, which are undesirable. Prioritize minimizing deviation from the target speed unless doing so compromises safety.
+
+2. **Speed Harmony Principle with Leaders:**
+   - **Objective:** SpeedDifferenceWithLeader
+   - **Guideline:** Prefer values closer to zero to ensure smooth traffic flow with leader vehicles. Larger negative values suggest significant speed differences, which can increase merging difficulty. A slight negative bias may be acceptable if necessary to maintain a safe headway.
+
+3. **Safe Headway Principle:**
+   - **Objective:** HeadwayToLeader
+   - **Guideline:** Higher values are generally preferable as they represent greater headway distances, which enhance safety by reducing collision risks. However, excessively high headway values should be balanced against traffic efficiency and avoiding disruption of flow.
+
+4. **Speed Harmony Principle with Followers:**
+   - **Objective:** SpeedDifferenceWithFollower
+   - **Guideline:** Aim for values close to zero to maintain harmony with follower vehicles. Significant negative values indicate speed mismatches, potentially causing issues for following vehicles. This objective should be balanced with maintaining appropriate distances and safety margins.
+
+5. **Collision Prevention Principle:**
+   - **Objective:** ContinuousCollisionPenalty
+   - **Guideline:** Maintain zero or higher values, as any negative value indicates a collision occurred. Prioritize avoiding collisions altogether, especially those with severe consequences. If a collision is unavoidable, minimize its severity by reducing the accelerations involved.
+
+6. **Balanced Trade-Off Principle:**
+   - **Guideline:** While each objective is important, recognize and manage trade-offs among them. For example, achieving perfect speed adherence may sometimes require sacrificing headway to maintain safe merging or avoiding collisions. Consider the holistic impact on traffic flow and safety when evaluating outcomes.
+
+These principles are designed to achieve a balance between traffic efficiency and safety for autonomous vehicles during the merging process onto a highway, while considering the collective impact on the surrounding traffic environment.

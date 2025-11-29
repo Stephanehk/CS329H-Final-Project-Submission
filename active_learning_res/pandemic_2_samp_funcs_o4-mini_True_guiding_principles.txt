@@ -1,0 +1,33 @@
+Here are the guiding principles for evaluating outcomes of different lockdown restrictions during the synthetic COVID-19 pandemic scenario:
+
+1. **Minimize Health Impact:**
+   - Prefer outcomes with higher (less negative) values for `SumInfectedAndCriticalReward`, `SumCriticalCasesReward`, `SumDeathsReward`, `SumICUCriticalCasesReward`, and `MaxCriticalCasesReward`.
+   - The goal is to reduce infections, critical cases, ICU demand, and fatalities to alleviate the health system's burden and save lives.
+
+2. **Maximize Recovery:**
+   - Favor outcomes with higher values for `SumRecoveriesReward` and `MinRecoveryReward`.
+   - High recovery rates indicate effective healthcare and successful disease management, leading to healthier populations.
+
+3. **Ensure Stability:**
+   - Prefer outcomes with higher (less negative) values for `InfectionVarianceReward`.
+   - Steady and predictable infection trends make it easier to plan and allocate healthcare and other resources effectively.
+
+4. **Balanced Enforcement:**
+   - Minimize (less negative) values for `InfectionAboveThresholdReward`.
+   - Lower enforcement actions suggest that the population is largely compliant with the ongoing measures, easing the burden on enforcement systems.
+
+5. **Appropriate Restriction Levels:**
+   - Consider the trade-offs in restriction levels based on `Stage0Reward` to `Stage4Reward`.
+     - **Stage 0 (No Measures):** Ideal if infection rates are low, recovery rates are high, and healthcare systems are not strained.
+     - **Stage 1 (Minimal Measures):** Suitable if minor restrictions can keep infections stable or declining without overwhelming healthcare systems.
+     - **Stage 2 (Moderate Measures):** Required when infections begin to strain healthcare resources or threaten stability.
+     - **Stage 3 (High Measures):** Necessary when there's a significant rise in critical cases or resource usage to protect health infrastructure.
+     - **Stage 4 (Maximum Measures):** Utilized when health outcomes severely deteriorate to urgently control infections at great economic and social cost.
+
+6. **Trade-off Considerations:**
+   - Evaluate trade-offs comprehensively. For instance, Stage 4 restrictions might drastically reduce infections but may have decreased economic activity and social interaction. A balanced approach with Stage 2 or 3 measures might maintain tolerable health outcomes while preserving more normal life conditions.
+  
+7. **Contextual Flexibility:**
+   - Adapt principles based on the specific context and time frame. Evolving data on pandemic severity, healthcare capacity, and societal needs might necessitate different priorities.
+
+These principles aim to balance health impacts of the pandemic with social and economic considerations to determine the most desirable course of action.

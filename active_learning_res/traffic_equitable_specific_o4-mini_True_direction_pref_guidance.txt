@@ -1,0 +1,31 @@
+Here's the mapping of each objective feature to its preferred direction, based on the outlined stakeholder goals and principles:
+
+- **MeanEgoSpeedsReward**: lower_is_better
+  - Needs to be balanced with MeanAllVehicleSpeedsReward but should not excessively exceed it to ensure equitable speed.
+
+- **MeanHeadwaysReward**: higher_is_better
+  - Promotes safer distances between vehicles.
+
+- **MeanEgoVehicleAccelerationsReward**: lower_is_better
+  - Avoids abrupt acceleration, ensuring smooth and predictable traffic flow.
+
+- **MeanAllVehicleSpeedsReward**: higher_is_better
+  - Should match well with MeanEgoSpeedsReward to maintain smooth overall traffic flow, assuming speed limits are respected.
+
+- **SafetyHeadwayFailureReward**: higher_is_better
+  - Indicates safe headway maintenance with fewer failures.
+
+- **MinimumEgoSpeedsReward**: lower_is_better
+  - While moderate speeds are desirable to prevent falling behind, this should also ensure that speed does not contribute to abrupt acceleration or inequity with MeanAllVehicleSpeedsReward.
+
+- **MinimumHeadwaysReward**: higher_is_better
+  - Ensures safer distances are consistently maintained even at the minimum threshold.
+
+- **MaximumAllVehicleSpeedsReward**: lower_is_better
+  - Avoids potential speed limit violations that may arise at high speeds.
+
+- **FailureCountReward**: lower_is_better
+  - Minimizes the occurrence of failures or collisions.
+
+- **SpeedExceedanceReward**: lower_is_better
+  - Ensures adherence to speed limits is maintained.

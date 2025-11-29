@@ -1,0 +1,18 @@
+Based on the objectives and the principles provided for evaluating outcomes, here are the mappings of each objective feature to its preferred direction:
+
+- **SumInfectedAndCriticalReward**: higher_is_better (less negative values indicate fewer infections and critical cases)
+- **SumCriticalCasesReward**: higher_is_better (less negative values indicate fewer critical cases and less healthcare strain)
+- **SumDeathsReward**: higher_is_better (less negative values indicate fewer deaths)
+- **SumICUCriticalCasesReward**: higher_is_better (less negative values indicate fewer ICU critical cases and less resource strain)
+- **SumRecoveriesReward**: higher_is_better (more positive values indicate more recoveries)
+- **InfectionAboveThresholdReward**: higher_is_better (less negative values suggest effective compliance and fewer enforcement needs)
+- **MaxCriticalCasesReward**: higher_is_better (less negative values indicate a lower peak in critical cases)
+- **MinRecoveryReward**: higher_is_better (more positive values indicate better recovery levels)
+- **InfectionVarianceReward**: higher_is_better (less negative values indicate more stable infection rates)
+- **Stage0Reward**: higher_is_better (indicates a lower stage of restrictions with minimal societal burden)
+- **Stage1Reward**: higher_is_better (indicates a low stage of restrictions with fewer societal impacts)
+- **Stage2Reward**: higher_is_better (indicates a moderate level of restrictions balancing health impacts)
+- **Stage3Reward**: context-dependent; higher_is_better only if needed to control severe health impacts
+- **Stage4Reward**: context-dependent; higher_is_better only if needed to control severe health impacts
+
+These mappings focus on minimizing health harms while carefully balancing societal restriction levels, aligning with the stakeholder goals of achieving optimal health outcomes with manageable societal restrictions.

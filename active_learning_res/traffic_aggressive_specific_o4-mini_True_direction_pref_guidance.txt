@@ -1,0 +1,20 @@
+Based on the restated stakeholder goals and principles, the primary focus is on maximizing the mean speed of the ego vehicles, and all other metrics are considered irrelevant unless they directly influence the mean speed of the ego vehicles. Therefore, the mapping for each objective feature to its preferred direction is as follows:
+
+```json
+{
+  "MeanEgoSpeedsReward": "higher_is_better",
+  "MeanHeadwaysReward": "none",
+  "MeanEgoVehicleAccelerationsReward": "none",
+  "MeanAllVehicleSpeedsReward": "none",
+  "SafetyHeadwayFailureReward": "none",
+  "MinimumEgoSpeedsReward": "none",
+  "MinimumHeadwaysReward": "none",
+  "MaximumAllVehicleSpeedsReward": "none",
+  "FailureCountReward": "none",
+  "SpeedExceedanceReward": "none"
+}
+```
+
+Explanation:
+- The `MeanEgoSpeedsReward` has a preferred direction of "higher_is_better" because the main goal is to maximize the mean speed of the ego vehicles.
+- All other metrics (`MeanHeadwaysReward`, `MeanEgoVehicleAccelerationsReward`, `MeanAllVehicleSpeedsReward`, `SafetyHeadwayFailureReward`, `MinimumEgoSpeedsReward`, `MinimumHeadwaysReward`, `MaximumAllVehicleSpeedsReward`, `FailureCountReward`, and `SpeedExceedanceReward`) are marked as "none" because they are irrelevant to the evaluation unless they have a direct impact on `MeanEgoSpeedsReward`, which is not considered in this task evaluation.

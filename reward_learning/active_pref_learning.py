@@ -17,7 +17,7 @@ openai.api_key = OPENAI_API_KEY
 import os, json, re
 from typing import List, Tuple, Dict, Any
 
-from test_glucose_reward import create_glucose_reward
+# from test_glucose_reward import create_glucose_reward
 from test_pandemic_reward import create_pandemic_reward
 from test_traffic_reward import create_traffic_reward
 from test_mujoco_ant_reward import create_mujoco_ant_reward

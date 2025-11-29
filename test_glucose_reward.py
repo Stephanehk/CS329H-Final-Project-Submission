@@ -3,7 +3,7 @@ import importlib.util
 import sys
 from pathlib import Path
 from typing import List, Sequence
-from bgp.simglucose.envs.glucose_obs_wrapper import GlucoseObservation
+# from bgp.simglucose.envs.glucose_obs_wrapper import GlucoseObservation
 from generated_objectives.glucose_generated_objectives import RewardFunction
 import numpy as np
 

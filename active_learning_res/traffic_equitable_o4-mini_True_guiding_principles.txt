@@ -1,0 +1,38 @@
+**Stakeholder Goals and Principles:**
+
+1. **Prioritize the Flow, Safety, and Comfort of Other Vehicles:** Autonomous vehicles should enhance traffic flow and safety, ensuring non-autonomous vehicles can travel smoothly and securely.
+   
+2. **Minimize Disruption to Other Vehicles:** Avoid abrupt maneuvers, maintain generous following distances, and yield the right-of-way to improve overall traffic conditions.
+
+3. **Autonomous Vehicle Etiquette:** Autonomous vehicles should act cooperatively, ensuring traffic flows smoothly and safely for all participants.
+
+4. **Cooperative Behavior:** Autonomous vehicles should maintain safe distances from other vehicles, yield when appropriate, and avoid obstructing other vehicles.
+
+5. **Trade-off Acceptance:** Accept slower speeds for autonomous vehicles if it results in less disruption to other traffic participants.
+
+---
+
+**Guiding Principles:**
+
+1. **Maximize Overall Traffic Flow:**
+   - Favor higher values of "MeanAllVehicleSpeedsReward" to ensure smoother traffic flow across all vehicles.
+   - Consider lower "SpeedExceedanceReward" by minimizing the number of vehicles exceeding speed limits to maintain controlled and safe traffic speeds.
+
+2. **Enhance Safety:**
+   - Favor higher values of "MeanHeadwaysReward" and "MinimumHeadwaysReward" to maintain generous distances between vehicles, thus increasing safety.
+   - Prioritize negative values of "FailureCountReward" and positive values of "SafetyHeadwayFailureReward" to minimize collisions and ensure safe headway distances.
+
+3. **Maintain Autonomous Vehicle Speeds Appropriately:**
+   - Accept slower autonomous vehicle speeds if it results in enhanced safety and less disruption, indicated by lower "MeanEgoSpeedsReward" and "MinimumEgoSpeedsReward" if necessary.
+   - Prefer positive values of "MinimumEgoSpeedsReward" as long as they do not compromise the safety and comfort of other vehicles.
+
+4. **Limit Aggressive Maneuvers:**
+   - Moderate "MeanEgoVehicleAccelerationsReward" to prevent aggressive driving, keeping accelerations in check to align with cooperative behavior.
+
+5. **Cooperative and Predictive Engagement:**
+   - Maintain cooperative and predictable behavior by yielding the right-of-way when needed as indicated by appropriately balancing speed and headways, even if it lowers the autonomous vehicle's scores temporarily.
+
+6. **Consider Trade-offs:** 
+   - Accept slower progress for autonomous vehicles ("MeanEgoSpeedsReward") and avoid pushing the limits on speed and acceleration if maintaining these constraints results in greater overall traffic flow and stability.
+
+By adhering to these guiding principles, the assessment of outcomes should align with the overarching objectives of prioritizing the safety, flow, and comfort of all vehicles, with a cooperative and less disruptive presence of autonomous vehicles in traffic.

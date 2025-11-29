@@ -1,0 +1,33 @@
+**Stakeholder Goals and Principles:**
+
+1. **Safety First:** Optimize for safety above all. Ensure that all vehicles abide by traffic laws and maintain safe conditions.
+2. **Politeness Second:** Encourage vehicles to maintain safe distances from each other to ensure a polite driving environment.
+3. **Speed Third:** Aim for higher speeds for smooth and equitable traffic flow, but not at the cost of safety or politeness.
+4. **Autonomous Vehicle Equality:** Promote equal speeds among vehicles to contribute to smooth and lawful traffic flow.
+5. **Hierarchical Comparison:** Prioritize safety over politeness, and politeness over speed. Speed considerations come into play only when safety and politeness are comparable.
+
+**Guiding Principles for Evaluating Outcomes:**
+
+1. **Safety Considerations:**
+   - **FailureCountReward:** Prioritize outcomes with lower failure counts as they indicate safer driving conditions. A value of 0 is optimal.
+   - **SafetyHeadwayFailureReward:** Prefer higher values as they reward safe headways and penalize failure occurrences, thus ensuring better safety.
+   - **MinimumHeadwaysReward:** Outcomes with higher minimum headways are preferred as they ensure larger and safer distances between vehicles.
+
+2. **Politeness Considerations:**
+   - **MeanHeadwaysReward:** Higher values are preferable as they indicate more polite driving with greater average headway distances.
+   - Evaluate politeness after confirming safety is not compromised.
+
+3. **Speed Considerations:**
+   - **MeanEgoSpeedsReward and MinimumEgoSpeedsReward:** Favor outcomes with higher average and minimum ego speeds, ensuring all ego vehicles maintain reasonable speeds when safety and politeness are not compromised.
+   - **MeanAllVehicleSpeedsReward:** Prefer higher values to promote smooth traffic flow, but this should not compromise safety or politeness.
+   - **MaximumAllVehicleSpeedsReward:** Be cautious with higher values; ensure they do not imply speed limit violations.
+   - **SpeedExceedanceReward:** Favor outcomes with lower values, indicating compliance with speed limits, hence aligning with safety goals.
+
+4. **Aggressiveness Evaluation:**
+   - **MeanEgoVehicleAccelerationsReward:** Balance is key; while healthy accelerations can indicate quick responsiveness, extremely high values may correlate with aggressive driving which is undesirable. Consider context with other measures such as safety and politeness.
+
+5. **Integrated Outcome Consideration:**
+   - Evaluate all objective features in context rather than in isolation, considering the hierarchy of safety, politeness, and speed.
+   - Outcomes meeting safety criteria with acceptable politeness should then be evaluated based on speed.
+
+By adhering to these guiding principles, it is ensured that outcomes align with stakeholder goals, optimizing for safety, promoting politeness, and facilitating smooth traffic flow all while respecting the established hierarchy.

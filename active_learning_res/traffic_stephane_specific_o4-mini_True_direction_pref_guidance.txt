@@ -1,0 +1,14 @@
+Based on the stakeholder goals and principles provided, here is the mapping of each objective feature to its preferred direction:
+
+- **MeanEgoSpeedsReward**: higher_is_better
+- **MeanHeadwaysReward**: higher_is_better
+- **MeanEgoVehicleAccelerationsReward**: lower_is_better
+- **MeanAllVehicleSpeedsReward**: higher_is_better
+- **SafetyHeadwayFailureReward**: higher_is_better
+- **MinimumEgoSpeedsReward**: higher_is_better
+- **MinimumHeadwaysReward**: higher_is_better
+- **MaximumAllVehicleSpeedsReward**: lower_is_better
+- **FailureCountReward**: lower_is_better
+- **SpeedExceedanceReward**: lower_is_better
+
+This mapping aims to achieve the goals of maximizing speed and efficiency while maintaining safety through headway management and speed limit compliance.

@@ -1,0 +1,18 @@
+Here's a mapping of each objective feature to its preferred direction:
+
+- **SumInfectedAndCriticalReward**: higher_is_better (as a more positive value indicates fewer infections and critical cases)
+- **SumCriticalCasesReward**: higher_is_better (as a more positive value indicates fewer critical cases)
+- **SumDeathsReward**: higher_is_better (as a more positive value indicates fewer deaths)
+- **SumICUCriticalCasesReward**: higher_is_better (as a more positive value indicates less ICU demand)
+- **SumRecoveriesReward**: higher_is_better (as a more positive value indicates more recoveries)
+- **InfectionAboveThresholdReward**: higher_is_better (as a more positive value indicates fewer enforcement actions needed)
+- **MaxCriticalCasesReward**: higher_is_better (as a more positive value indicates fewer maximum critical cases)
+- **MinRecoveryReward**: higher_is_better (as a more positive value indicates better minimum recovery levels)
+- **InfectionVarianceReward**: higher_is_better (as a more positive value indicates lower infection variance)
+- **Stage0Reward**: higher_is_better (as a more positive value indicates a preference for no lockdown measures)
+- **Stage1Reward**: higher_is_better (as a more positive value indicates minimal lockdown measures)
+- **Stage2Reward**: neutral (used as a flexible option, not directly preferred higher or lower in isolation)
+- **Stage3Reward**: neutral (used as a flexible option, not directly preferred higher or lower in isolation)
+- **Stage4Reward**: neutral (used for maximum restriction, preferred only when necessary)
+
+This mapping is designed to balance minimizing health impacts with reducing societal disruption due to lockdowns.

@@ -1,0 +1,29 @@
+### Restated Stakeholder Goals and Principles:
+1. **Goal**: 
+   - Maximize the mean speed of the autonomous vehicles (ego vehicles).
+
+2. **Principles**:
+   - **Autonomous Vehicle Speed Dominance**: Any increase in the mean speed of the autonomous vehicles strictly improves the outcome, regardless of other objectives.
+   - **No Other Objectives**: No other objectives are relevant to your evaluation.
+
+### Patterns to Watch Out For:
+- Patterns indicating increased mean speed of ego vehicles, regardless of other performance metrics.
+- Disregard for any variations or changes in metrics related to non-autonomous vehicles, or other performance factors like headways, acceleration, etc.
+- Any changes in minimum or maximum speeds that do not align with an increase in the mean speed of the ego vehicles should be ignored.
+
+### Guiding Principles for Evaluation:
+1. **Primary Focus on Ego Vehicle Mean Speed**:
+   - Higher values of the `MeanEgoSpeedsReward` indicate a more desirable outcome.
+   - Any outcome that achieves higher `MeanEgoSpeedsReward` is automatically prioritized, without consideration for other variables.
+
+2. **Irrelevance of Other Metrics**:
+   - Outcomes with changes in `MeanHeadwaysReward`, `MeanEgoVehicleAccelerationsReward`, `MeanAllVehicleSpeedsReward`, `SafetyHeadwayFailureReward`, `MinimumEgoSpeedsReward`, `MinimumHeadwaysReward`, `MaximumAllVehicleSpeedsReward`, `FailureCountReward`, and `SpeedExceedanceReward` should only be considered if they impact the `MeanEgoSpeedsReward`.
+   - Higher or lower values of these metrics are irrelevant unless they affect the mean speed of ego vehicles.
+
+3. **Ignoring Safety and Compliance Metrics**:
+   - Headways, accelerations, failures, and speed limit compliance metrics are not considered in the evaluation process unless they demonstrate an impact, either positive or negative, on the `MeanEgoSpeedsReward`.
+
+4. **No Evaluation of Non-Ego Vehicles**:
+   - All metrics related to non-autonomous vehicles or their interactions with ego vehicles should be disregarded.
+
+By adhering to these principles, stakeholders can ensure alignment with the stated goals and focus solely on maximizing the performance of the autonomous vehicles in terms of their speed.

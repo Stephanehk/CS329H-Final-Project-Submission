@@ -1,0 +1,28 @@
+Stakeholder Goals and Principles:
+
+1. Balance the objectives of minimizing health harms (e.g., deaths, severe cases, ICU burden, mortality/morbidity proxies) and minimizing intervention stringency or societal restriction burden (i.e., lockdown stage).
+2. Prioritize minimizing health harms over minimizing lockdown regulations, but avoid lockdown regulations that are too strict or unnecessary.
+
+Health Harms Priority: A decrease in total health harms usually indicates a better outcome, but avoid lockdown regulations that are too strict or unnecessary.
+Lockdown Stage Trade-off: A lower lockdown stage is more desirable, but minimizing health harms is the primary priority.
+
+Guiding Principles:
+
+1. **Minimize Health Harms**:
+   - Prefer outcomes with higher values for `SumRecoveriesReward` and `MinRecoveryReward` (indicating better recovery rates).
+   - Prefer outcomes with less negative values for `SumInfectedAndCriticalReward`, `SumCriticalCasesReward`, `SumDeathsReward`, `SumICUCriticalCasesReward`, and `MaxCriticalCasesReward` (indicating fewer infections, critical cases, deaths, and reduced ICU strain).
+   - Minimize variance in infection rates (`InfectionVarianceReward`) to ensure stability and predictability in infection trends.
+
+2. **Balance Intervention Stringency**:
+   - Recognize that lower lockdown stages, represented by higher values for `Stage0Reward` and `Stage1Reward`, are generally more desirable due to lower societal restrictions.
+   - However, prioritize outcomes where health harms are significantly minimized, even if higher lockdown stages (`Stage2Reward`, `Stage3Reward`, `Stage4Reward`) are temporarily necessary.
+   - Evaluate the proportionality of each lockdown stage against associated reductions in critical health outcomes to avoid overly strict regulations that do not significantly improve health harms.
+
+3. **Manage Compliance Needs**:
+   - Prefer outcomes with less negative values for `InfectionAboveThresholdReward` to reduce the need for increased enforcement actions, indicating effective and sustainable public compliance without excessive measures.
+
+4. **Strategic Trade-offs**:
+   - Consider the relative trade-offs between health outcomes and restriction stages: if minimal improvement in health harms is achieved with higher lockdown stages, reevaluate the necessity of such measures to avoid undue societal burden.
+   - Use a holistic view to balance the spectrum of all factors, ensuring that interventions are effective, necessary, and proportionate to the achieved benefits.
+
+These principles, aligned with stakeholder goals, aim to guide decision-making in navigating the complex trade-offs between minimizing health harms and maintaining societal freedoms during the management of the pandemic in a synthetic environment.

@@ -1,0 +1,18 @@
+Given the guiding principles and the narrow focus on the Stage0Reward objective, here is the mapping of each objective feature to its preferred direction:
+
+- "SumInfectedAndCriticalReward": Not relevant
+- "SumCriticalCasesReward": Not relevant
+- "SumDeathsReward": Not relevant
+- "SumICUCriticalCasesReward": Not relevant
+- "SumRecoveriesReward": Not relevant
+- "InfectionAboveThresholdReward": Not relevant
+- "MaxCriticalCasesReward": Not relevant
+- "MinRecoveryReward": Not relevant
+- "InfectionVarianceReward": Not relevant
+- "Stage0Reward": higher_is_better
+- "Stage1Reward": Not relevant
+- "Stage2Reward": Not relevant
+- "Stage3Reward": Not relevant
+- "Stage4Reward": Not relevant
+
+Under the stakeholder guidelines, only the Stage0Reward is considered relevant, and its preferred direction is higher_is_better, as the goal is to maximize the time spent in lockdown stage 0. All other objectives are deemed irrelevant to the evaluation.

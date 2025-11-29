@@ -1,0 +1,33 @@
+Here is the mapping of each objective feature to its preferred direction based on the stakeholder's goals and principles:
+
+1. **MeanEgoSpeedsReward:** higher_is_better
+   - This directly relates to maximizing the speed and flow of the autonomous vehicles, which is the primary goal.
+
+2. **MeanHeadwaysReward:** higher_is_better
+   - Higher headways indicate safer distances, which can prevent failures and support sustained high speeds for ego vehicles.
+
+3. **MeanEgoVehicleAccelerationsReward:** higher_is_better
+   - Encouraging higher accelerations aligns with achieving higher speeds, as long as it doesn't result in failures.
+
+4. **MeanAllVehicleSpeedsReward:** higher_is_better
+   - Although non-autonomous vehicles are not of primary concern, a higher average speed indicates smoother traffic integration, which can benefit ego vehicles.
+
+5. **SafetyHeadwayFailureReward:** higher_is_better
+   - A positive value signifies fewer failures and sufficient headways, which help maintain high-speed flow.
+
+6. **MinimumEgoSpeedsReward:** higher_is_better
+   - Maintaining a higher minimum speed ensures that all ego vehicles perform optimally, aligning with the goal of maximizing autonomous vehicle speed.
+
+7. **MinimumHeadwaysReward:** higher_is_better
+   - Similar to MeanHeadwaysReward, larger minimum headways maintain safety and prevent slowdowns due to potential collisions.
+
+8. **MaximumAllVehicleSpeedsReward:** lower_is_better
+   - While high speeds are not discouraged for ego vehicles, excessively high speeds for all vehicles might imply speed limit exceedances, which should be noted to avoid potential legal issues.
+
+9. **FailureCountReward:** lower_is_better
+   - A value of 0 is optimal, as failures block traffic flow and reduce speed, impacting performance negatively.
+
+10. **SpeedExceedanceReward:** lower_is_better
+    - While exceeding speeds isn't a primary concern, keeping it lower helps prevent situations that might legally or operationally constrain autonomous vehicle performance in the future.
+
+These directions align the evaluation of outcomes with the stakeholder's focus on maximizing the performance of the autonomous vehicles while maintaining a balance with necessary safety measures.

@@ -2,6 +2,20 @@
 
 This project implements a Deliberative-Reward-Design approach for generating reward functions using LLMs. Below are the instructions for running the various components of the pipeline.
 
+## Installation
+
+1.  **Python Version**: Use Python 3.9.
+2.  **Dependencies**: Install the required packages.
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Pandemic Environment**: Install the pandemic environment.
+    ```bash
+    cd pandemic
+    pip install -e .
+    cd ..
+    ```
+
 ## Setup
 
 Before running any scripts, ensure you have your OpenAI API key configured.
@@ -22,7 +36,7 @@ To generate a set of reward features using our Deliberative-Reward-Design approa
    python3 obj_elicit.py --powerful-nodes 6,6-add-unmeasurable,8,10
    ```
 
-The generated features can be found in the `generated_objectives/` folder. Note that we have already run this script, so you can view those generated objectives without needing to re-run.
+The generated features can be found in the `generated_objectives/` folder. Note that we have already run this script, so you can view those generated objectives without needing to re-run:
 
 ### Non-Deliberative-Reward-Design (Baseline)
 To generate a set of reward features using the baseline Non-Deliberative approach:

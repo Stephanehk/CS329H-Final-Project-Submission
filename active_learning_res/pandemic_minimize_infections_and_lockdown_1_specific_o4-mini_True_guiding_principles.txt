@@ -1,0 +1,30 @@
+**Stakeholder Goals and Principles:**
+
+1. **Goal to Minimize Infections and Critical Cases**: Focus on reducing the number of infected and critical cases to improve health outcomes.
+
+2. **Lockdown Stage Minimization**: Aim for the least restrictive lockdown stage while still managing the pandemic effectively.
+
+3. **Exclusion of Other Objectives**: Only consider the sum of infections and critical cases, and lockdown stage for evaluation. Other objectives are not relevant.
+
+**Guiding Principles Aligned with Stakeholder Goals:**
+
+1. **Infections and Critical Cases Minimization**:
+   - Prefer outcomes where the "SumInfectedAndCriticalReward" and "SumCriticalCasesReward" are less negative. This indicates a lower sum of infected and critical cases over time.
+   - Lower "MaxCriticalCasesReward" values should also be prioritized, as they indicate a reduction in the peak demand on healthcare systems.
+
+2. **Prioritize Health Outcomes**:
+   - Priority should be given to reducing infections, critical cases, and healthcare strain even if it means maintaining or increasing the lockdown stage.
+   - The principle of "Infections and Critical Cases Priority" is paramount; a decrease in these numbers strictly improves the outcome, regardless of lockdown stages.
+
+3. **Balanced Lockdown Stage**:
+   - Favor outcomes where the lockdown stage, as measured by "Stage0Reward", "Stage1Reward", "Stage2Reward", "Stage3Reward", or "Stage4Reward", is higher (i.e., less restrictive), provided it does not lead to a significant increase in infections and critical cases.
+   - Consider higher lockdown stages only when necessary to control the pandemic effectively and balance health outcomes as per "Lockdown Stage Trade-off".
+
+4. **Exclusion of Unrelated Objectives**:
+   - Disregard the "SumDeathsReward", "SumICUCriticalCasesReward", "SumRecoveriesReward", "InfectionAboveThresholdReward", "MinRecoveryReward", and "InfectionVarianceReward". These do not directly impact the evaluation of the desired outcomes focused on infection control and lockdown minimization.
+
+5. **Strategic Flexibility**:
+   - Maintain flexibility in approach by adjusting lockdown stages dynamically to achieve the dual goals of reducing infections and minimizing restrictions.
+   - Regularly monitor the effectiveness of restrictions and be ready to shift stages in response to changes in infection and critical case trends, ensuring alignment with both health and social objectives.
+
+These principles guide the decision-making process in the synthetic environment, ensuring alignment with the priority of minimizing infections and critical healthcare cases while striving to achieve the lowest feasible lockdown stage.

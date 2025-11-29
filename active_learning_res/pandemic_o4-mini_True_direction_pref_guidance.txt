@@ -1,0 +1,18 @@
+Here's the mapping of each objective feature to its preferred direction:
+
+- **SumInfectedAndCriticalReward**: higher_is_better (Less negative indicates fewer infections and critical cases)
+- **SumCriticalCasesReward**: higher_is_better (Less negative indicates fewer critical cases)
+- **SumDeathsReward**: higher_is_better (Less negative indicates fewer deaths)
+- **SumICUCriticalCasesReward**: higher_is_better (Less negative indicates less demand for ICU resources)
+- **SumRecoveriesReward**: higher_is_better (More positive indicates more recoveries)
+- **InfectionAboveThresholdReward**: higher_is_better (Less negative indicates fewer enforcement actions needed)
+- **MaxCriticalCasesReward**: higher_is_better (Less negative indicates lower peak critical cases)
+- **MinRecoveryReward**: higher_is_better (More positive indicates better recovery levels)
+- **InfectionVarianceReward**: higher_is_better (Less negative indicates stable infection trends)
+- **Stage0Reward**: higher_is_better (Less restriction indicates better balance when possible)
+- **Stage1Reward**: higher_is_better (Less restriction indicates better balance when possible)
+- **Stage2Reward**: higher_is_better (Less restriction indicates better balance when possible)
+- **Stage3Reward**: context-dependent (Preferred when higher restriction is necessary for safety)
+- **Stage4Reward**: context-dependent (Preferred when maximum restriction is necessary for safety)
+
+In this context, the preference for stage rewards should take into account the current healthcare situation and societal needs, with lower stages generally preferred unless higher stages are required to achieve safety outcomes.

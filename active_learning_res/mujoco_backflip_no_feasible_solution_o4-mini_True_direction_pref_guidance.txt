@@ -1,0 +1,14 @@
+Based on the guidelines provided, here is the mapping of each objective feature to its preferred direction:
+
+- **ZOrientationChangeReward**: higher_is_better
+- **QuaternionUprightStanceReward**: higher_is_better
+- **MinimumZCoordinateReward**: higher_is_better
+- **MaximumAngularVelocityReward**: higher_is_better
+- **FlipDurationReward**: higher_is_better
+- **TotalTorqueUsageReward**: higher_is_better
+- **CumulativeTrajectoryDeviationReward**: higher_is_better
+- **JointAngularVelocityStabilityReward**: higher_is_better
+- **MaximumTorqueAppliedReward**: higher_is_better
+- **AverageContactForceUponLandingReward**: higher_is_better
+
+Each of these mappings aligns with the principles of achieving efficient, controlled, and stable backflip execution while minimizing potential damage and instability.

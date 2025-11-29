@@ -1,0 +1,18 @@
+To determine the preferred direction for each objective feature according to the guidelines provided for a synthetic environment task of choosing lockdown levels during a pandemic, the mapping is as follows:
+
+- **SumInfectedAndCriticalReward**: higher_is_better (less negative indicates fewer infections and critical cases)
+- **SumCriticalCasesReward**: higher_is_better (less negative indicates fewer critical cases)
+- **SumDeathsReward**: higher_is_better (less negative indicates fewer deaths)
+- **SumICUCriticalCasesReward**: higher_is_better (less negative indicates reduced ICU strain)
+- **SumRecoveriesReward**: higher_is_better (more positive indicates more recoveries)
+- **InfectionAboveThresholdReward**: higher_is_better (less negative indicates reduced need for enforcement actions)
+- **MaxCriticalCasesReward**: higher_is_better (less negative indicates lower peak critical cases)
+- **MinRecoveryReward**: higher_is_better (more positive indicates better recovery rates)
+- **InfectionVarianceReward**: higher_is_better (less negative indicates more stability in infection trends)
+- **Stage0Reward**: higher_is_better (indicates no measures/lowest restriction level)
+- **Stage1Reward**: higher_is_better (indicates minimal measures)
+- **Stage2Reward**: lower_is_better (indicates moderate measures, less desirable unless necessary for health outcomes)
+- **Stage3Reward**: lower_is_better (indicates high measures, less desirable unless necessary for health outcomes)
+- **Stage4Reward**: lower_is_better (indicates maximum measures, less desirable unless necessary for health outcomes)
+
+This mapping considers the balance between minimizing health harms and minimizing societal restrictions according to the stakeholder guidelines and principles.

@@ -1,0 +1,36 @@
+Based on the provided guidelines and objectives, here is the mapping of each objective feature to its preferred direction (higher_is_better or lower_is_better):
+
+1. **ForwardDistanceReward**: higher_is_better
+   - This directly measures the forward movement, which is the primary goal.
+
+2. **ProgressTowardsGoalReward**: higher_is_better
+   - Indicates progress towards the goal; a higher value is preferable.
+
+3. **TotalTorqueExerted**: lower_is_better
+   - Lower values reflect better energy efficiency.
+
+4. **MeanJointAngularVelocities**: No specific preference (Neutral)
+   - Not directly correlated with the primary objective, thus auxiliary.
+
+5. **TorqueApplicationFrequency**: lower_is_better
+   - Reducing this promotes smoother and more efficient movements.
+
+6. **MaxJointAngleDeviation**: lower_is_better
+   - Lower deviations ensure better control and alignment.
+
+7. **TrajectoryChangeCount**: lower_is_better
+   - Fewer changes in trajectory suggest a more consistent and efficient path.
+
+8. **OrientationStability**: higher_is_better
+   - A more stable orientation (less negative) is preferred for maintaining balance.
+
+9. **JointPerformanceIndex**: higher_is_better
+   - Indicates efficient joint function; higher values are desirable.
+
+10. **MovementOscillationCount**: lower_is_better
+   - Reducing oscillations results in smoother and more consistent movement.
+
+11. **HealthyZPositionCount**: higher_is_better
+   - A consistent value of 1 indicates a healthy and stable posture.
+
+This mapping prioritizes effective movement, energy efficiency, stability, and maintaining the robot's health and safety.

@@ -1,0 +1,18 @@
+Here's the mapping of each objective feature to its preferred direction based on the guidelines provided:
+
+- **SumInfectedAndCriticalReward**: higher_is_better (A less negative value is preferred, indicating fewer infections and critical cases.)
+- **SumCriticalCasesReward**: higher_is_better (A less negative value is preferred, indicating fewer critical cases.)
+- **SumDeathsReward**: higher_is_better (A less negative value is preferred, indicating fewer deaths.)
+- **SumICUCriticalCasesReward**: higher_is_better (A less negative value is preferred, indicating fewer critical cases needing ICU care.)
+- **SumRecoveriesReward**: higher_is_better (More positive values are preferred, indicating more recoveries.)
+- **InfectionAboveThresholdReward**: higher_is_better (A less negative value is preferred, indicating fewer enforcement actions needed.)
+- **MaxCriticalCasesReward**: higher_is_better (A less negative value is preferred, indicating a lower peak of critical cases.)
+- **MinRecoveryReward**: higher_is_better (More positive values are preferred, indicating better recovery levels.)
+- **InfectionVarianceReward**: higher_is_better (A less negative value is preferred, indicating lower variance and more stability in infection rates.)
+- **Stage0Reward**: Context-dependent, but often higher_is_better when health metrics allow for it (favor minimal restrictions when safe).
+- **Stage1Reward**: Context-dependent, but often higher_is_better when health metrics allow for it (favor minimal restrictions when appropriate).
+- **Stage2Reward**: Context-dependent, serving as a transitional measure.
+- **Stage3Reward**: Context-dependent, with higher_is_better when facing increased health metric severity (favor more restrictions to mitigate health impacts).
+- **Stage4Reward**: Context-dependent, with higher_is_better in critical situations (maximize restrictions to control health impact when necessary).
+
+These preferred directions aim to achieve lower negative impacts on health and higher positive outcomes regarding recoveries, all while adjusting restriction levels according to the situation's severity.

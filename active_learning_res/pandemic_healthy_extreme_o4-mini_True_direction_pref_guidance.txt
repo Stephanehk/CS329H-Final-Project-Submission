@@ -1,0 +1,36 @@
+Based on the provided objectives and the guiding principles focused on minimizing health harm, here is the mapping of each objective feature to its preferred direction:
+
+1. `"SumInfectedAndCriticalReward"`: higher_is_better
+   - Less negative values indicate fewer infections and critical cases, aligning with minimizing health harm.
+
+2. `"SumCriticalCasesReward"`: higher_is_better
+   - Less negative values reflect fewer critical cases, reducing healthcare system strain.
+
+3. `"SumDeathsReward"`: higher_is_better
+   - Less negative values indicate fewer deaths, which is crucial for reducing total health harm.
+
+4. `"SumICUCriticalCasesReward"`: higher_is_better
+   - Less negative values imply a lower demand for ICU care, easing resource strain.
+
+5. `"SumRecoveriesReward"`: higher_is_better
+   - More positive values reflect a higher number of recoveries, indicating improved health outcomes.
+
+6. `"InfectionAboveThresholdReward"`: higher_is_better
+   - Less negative values suggest fewer enforcement actions are needed, indicating effective infection management.
+
+7. `"MaxCriticalCasesReward"`: higher_is_better
+   - Less negative values show lower peaks of critical cases, reducing bursts in healthcare demand.
+
+8. `"MinRecoveryReward"`: higher_is_better
+   - More positive values represent better recovery levels, contributing to effective pandemic management.
+
+9. `"InfectionVarianceReward"`: higher_is_better
+   - Less negative values imply more stable infection trends, aligning with reduced health harm.
+
+10. `"Stage0Reward"`: Context-specific, but not prioritized for health outcomes.
+11. `"Stage1Reward"`: Context-specific, but not prioritized for health outcomes.
+12. `"Stage2Reward"`: Context-specific, but not prioritized for health outcomes.
+13. `"Stage3Reward"`: Context-specific, but not prioritized for health outcomes.
+14. `"Stage4Reward"`: Context-specific, but not prioritized for health outcomes.
+
+For objectives 10 through 14, while they provide context regarding the level of restrictions, they are not prioritized for determining health outcomes, in accordance with the Health Dominance principle. The focus remains on minimizing total health harm, and thus these are not assessed with higher_is_better or lower_is_better.

@@ -1,0 +1,16 @@
+Here is the mapping of each objective feature to its preferred direction:
+
+- **ZCoordinateHealthDistance**: higher_is_better
+- **FullRotationAngularVelocity**: higher_is_better
+- **LandingLocationAccuracy**: higher_is_better
+- **StabilityDurationPostLanding**: higher_is_better
+- **FlipDuration**: lower_is_better (moderate values are preferred to avoid excessive durations, but generally, shorter durations are more efficient)
+- **MaximumZCoordinateValue**: higher_is_better
+- **MeanAngularVelocityTorso**: higher_is_better
+- **CollisionImpactAssessment**: higher_is_better
+- **JointMovementSmoothness**: higher_is_better
+- **MaximumContactForceDuringLanding**: higher_is_better
+- **EnergyUtilizationZCoordinateChanges**: higher_is_better
+- **PerformanceVarianceConsistencyAcrossTrials**: higher_is_better
+
+These preferred directions will help in evaluating and identifying more desirable outcomes for the ant robot's backflip performance.

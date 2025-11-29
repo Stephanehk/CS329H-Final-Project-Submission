@@ -7,7 +7,7 @@ This project implements a Deliberative-Reward-Design approach for generating rew
 1.  **Python Version**: Use Python 3.9.
 2.  **Dependencies**: Install the required packages.
     ```bash
-    pip install -r requirements.txt
+    conda env create -f requirements.yaml 
     ```
 3.  **Pandemic Environment**: Install the pandemic environment.
     ```bash
@@ -36,7 +36,9 @@ To generate a set of reward features using our Deliberative-Reward-Design approa
    python3 obj_elicit.py --powerful-nodes 6,6-add-unmeasurable,8,10
    ```
 
-The generated features can be found in the `generated_objectives/` folder. Note that we have already run this script, so you can view those generated objectives without needing to re-run:
+The generated features can be found in the `generated_objectives/` folder. Note that we have already run this script, so you can view those generated objectives without needing to re-run. Those files are:
+
+```generated_objectives/pandemic_generated_objectives.py``` and ```generated_objectives/traffic_generated_objectives.py```
 
 ### Non-Deliberative-Reward-Design (Baseline)
 To generate a set of reward features using the baseline Non-Deliberative approach:
@@ -49,7 +51,10 @@ The generated features can be found in the `generated_objectives_no_convo_baseli
 
 ## 2. Learn Reward Weights
 
-To learn the weights over the generated features via our facilitator-guided preference elicitation procedure, run the command corresponding to your environment. Note that we have already run this script, so you can view those generated objectives without needing to re-run.
+To learn the weights over the generated features via our facilitator-guided preference elicitation procedure, run the command corresponding to your environment. Note that we have already run this script, so you can view those generated objectives without needing to re-run. Those files are:
+
+
+```generated_objectives_no_convo_baseline/pandemic_generated_objectives.py``` and ```generated_objectives_no_convo_baseline/traffic_generated_objectives.py```
 
 **For Pandemic:**
 ```bash

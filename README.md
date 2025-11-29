@@ -27,12 +27,14 @@ This project implements a Deliberative-Reward-Design approach for generating rew
 
 ## Setup
 
-Before running any scripts, ensure you have your OpenAI API key configured.
+Ensure you have your OpenAI API key configured.
 1. Open `secret_keys.py`.
 2. Add your API key:
    ```python
    OPENAI_API_KEY = "your-api-key-here"
    ```
+
+*Note: you can run the evaluation scripts on the reward functions we have already generated if you want to avoid having to put your OpenAI key in/paying for API calls. *
 
 ## 1. Generate Reward Features
 

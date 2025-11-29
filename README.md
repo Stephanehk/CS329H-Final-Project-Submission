@@ -7,7 +7,7 @@ This project implements a Deliberative-Reward-Design approach for generating rew
 1.  **Python Version**: Use Python 3.9.
 2.  **Dependencies**: Install the required packages.
     ```bash
-    conda env create -f requirements.yaml 
+    conda env create -f environment.yaml 
     ```
     alternatively, use the requirements.txt for pip if this fails (e.g., if on a mac not linux)
 3.  **Pandemic Environment**: Install the pandemic environment.
@@ -23,6 +23,7 @@ This project implements a Deliberative-Reward-Design approach for generating rew
     export SUMO_HOME="$PWD"
     cd ..
     ```
+5. **Download trajectory data for evaluation**: Download from: https://drive.google.com/file/d/1JDaN0c9dirrdXae3p2zXAvoi7Pjn-obf/view?usp=sharing
 
 ## Setup
 
@@ -44,7 +45,9 @@ To generate a set of reward features using our Deliberative-Reward-Design approa
    python3 obj_elicit.py --powerful-nodes 6,6-add-unmeasurable,8,10
    ```
 
-The generated features can be found in the `generated_objectives/` folder. Note that we have already run this script, so you can view those generated objectives without needing to re-run. Those files are:
+The generated features can be found in the `generated_objectives/` folder. 
+
+*Note that we have already run this script, so you can view those generated objectives without needing to re-run. Those files are:*
 
 ```generated_objectives/pandemic_generated_objectives.py``` and ```generated_objectives/traffic_generated_objectives.py```
 
@@ -59,8 +62,9 @@ The generated features can be found in the `generated_objectives_no_convo_baseli
 
 ## 2. Learn Reward Weights
 
-To learn the weights over the generated features via our facilitator-guided preference elicitation procedure, run the command corresponding to your environment. Note that we have already run this script, so you can view those generated objectives without needing to re-run. Those files are:
+To learn the weights over the generated features via our facilitator-guided preference elicitation procedure, run the command corresponding to your environment. 
 
+*Note that we have already run this script, so you can view those generated objectives without needing to re-run. Those files are:*
 
 ```generated_objectives_no_convo_baseline/pandemic_generated_objectives.py``` and ```generated_objectives_no_convo_baseline/traffic_generated_objectives.py```
 
@@ -75,6 +79,7 @@ python3 -m reward_learning.active_pref_learning traffic llm o4-mini false true t
 ```
 
 *Note: To elicit weights for the **Non-Deliberative-Reward-Design baseline**, change the last boolean argument in the commands above from `false` to `true`.*
+*Note: You can jump straight to running the evaluation scripts if you wish to avoid inputting your API key to generate a reward function; we have already run these scripts so the weights for the reward functions are in active_learning_res*
 
 ## 3. Evaluation
 
